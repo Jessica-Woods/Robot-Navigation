@@ -20,9 +20,15 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="RobotNavigation.cpp" />
+    <ClCompile Include="util\file.cpp" />
+    <ClCompile Include="util\string.cpp" />
+    <ClCompile Include="util\vector.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="RobotNavigation.h" />
+    <ClInclude Include="util\file.h" />
+    <ClInclude Include="util\string.h" />
+    <ClInclude Include="util\vector.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

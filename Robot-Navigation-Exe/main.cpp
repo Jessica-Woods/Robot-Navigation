@@ -3,7 +3,14 @@
 #include "../Robot-Navigation/RobotNavigation.h"
 
 int main(int argc, char** argv) {
-  RobotNavigation program;
+  if (argc != 3) {
+    std::cout << "Usage: RobotNavigation.exe <filepath> <method>" << std::endl;
+    return 1;
+  }
 
-  std::cout << program.runFromFile("test.txt", "bfs") << std::endl;
+  RobotNavigation program;
+  std::string filepath(argv[1]);
+  std::string method(argv[2]);
+
+  std::cout << program.runFromFile(filepath, method) << std::endl;
 }

@@ -1,12 +1,19 @@
 #include "RobotNavigation.h"
 
-std::string RobotNavigation::runFromFile(std::string filepath, std::string method) {
-  std::string file = "this is totally a file";
+#include "util/file.h"
 
-  return run("test_filename", file, method);
+#include <iostream>
+
+std::string RobotNavigation::runFromFile(std::string filepath, std::string method) {
+  std::vector<std::string> lines = util::file::readCleanLines(filepath);
+  return run(filepath, lines, method);
 }
 
-std::string RobotNavigation::run(std::string filename, std::string text, std::string method) {
-  return "test_filename DFS 50\n"
-    "up; right; down; down; right; right; right; up; up; right; right; right;";
+std::string RobotNavigation::run(std::string filename, std::vector<std::string> lines, std::string method) {
+  std::cout << filename << std::endl;
+  std::string s;
+  for (auto line : lines) {
+    s += line + "\n";
+  }
+  return s;
 }

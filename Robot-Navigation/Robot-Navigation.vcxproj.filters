@@ -13,15 +13,39 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\util">
+      <UniqueIdentifier>{234342a9-3762-421c-addf-cb1227b6afee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\util">
+      <UniqueIdentifier>{ed0fd4a8-8356-4fa7-a0e0-a428df245e57}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="RobotNavigation.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="util\file.cpp">
+      <Filter>Source Files\util</Filter>
+    </ClCompile>
+    <ClCompile Include="util\string.cpp">
+      <Filter>Source Files\util</Filter>
+    </ClCompile>
+    <ClCompile Include="util\vector.cpp">
+      <Filter>Source Files\util</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="RobotNavigation.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="util\file.h">
+      <Filter>Header Files\util</Filter>
+    </ClInclude>
+    <ClInclude Include="util\string.h">
+      <Filter>Header Files\util</Filter>
+    </ClInclude>
+    <ClInclude Include="util\vector.h">
+      <Filter>Header Files\util</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

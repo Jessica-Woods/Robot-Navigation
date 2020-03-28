@@ -3,17 +3,18 @@
 #include "../Robot-Navigation/RobotNavigation.h"
 
 TEST(RobotNavigation, find_path_with_dfs) {
-  std::string file = 
-    "[5,11]\n"
-    "(0,1)\n"
-    "(7,0) | (10,3)\n"
-    "(2,0,2,2)\n"
-    "(8,0,1,2)\n"
-    "(10,0,1,1)\n"
-    "(2,3,1,2)\n"
-    "(3,4,3,1)\n"
-    "(9,3,1,1)\n"
-    "(8,4,2,1)\n";
+  std::vector<std::string> file = {
+    "[5,11]",
+    "(0,1)",
+    "(7,0) | (10,3)",
+    "(2,0,2,2)",
+    "(8,0,1,2)",
+    "(10,0,1,1)",
+    "(2,3,1,2)",
+    "(3,4,3,1)",
+    "(9,3,1,1)",
+    "(8,4,2,1)"
+  };
 
   RobotNavigation program;
   std::string result = program.run("test_filename", file, "DFS");

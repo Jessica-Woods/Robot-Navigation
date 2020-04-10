@@ -33,6 +33,9 @@
     <ClCompile Include="util\vector.cpp">
       <Filter>Source Files\util</Filter>
     </ClCompile>
+    <ClCompile Include="Grid.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="RobotNavigation.h">
@@ -46,6 +49,9 @@
     </ClInclude>
     <ClInclude Include="util\vector.h">
       <Filter>Header Files\util</Filter>
+    </ClInclude>
+    <ClInclude Include="Grid.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

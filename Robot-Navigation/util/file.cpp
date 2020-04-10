@@ -1,6 +1,7 @@
 #include "file.h"
 #include "string.h"
 
+#include <stdexcept>
 #include <fstream>
 
 bool util::file::exists(std::string path) {
@@ -9,11 +10,14 @@ bool util::file::exists(std::string path) {
 }
 
 std::vector<std::string> util::file::readLines(std::string path) {
-  std::vector<std::string> lines;
   std::ifstream file(path, std::ifstream::in);
-  std::string line;
-  char c;
+  if (!file.good()) {
+    throw std::runtime_error("File not found: " + path);
+  }
 
+  char c;
+  std::string line;
+  std::vector<std::string> lines;
   while (file.get(c)) {
     if (c == '\n') {
       lines.push_back(line);

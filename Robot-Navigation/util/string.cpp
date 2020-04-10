@@ -66,3 +66,21 @@ std::string util::string::readInput() {
 
   return result;
 }
+
+std::vector<int> util::string::numbers(std::string s) {
+  std::vector<int> result;
+  std::string digits = "";
+
+  for (char c : s) {
+    if (isdigit(c)) {
+      digits.push_back(c);
+    }
+    else if(digits != "") {
+      result.push_back(std::stoi(digits));
+      digits.clear();
+    }
+  }
+
+  if(digits != "") { result.push_back(std::stoi(digits)); }
+  return result;
+}

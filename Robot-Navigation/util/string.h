@@ -35,5 +35,7 @@ namespace util {
     std::string readInput();
 
     std::tuple<std::string, std::string> split_first(std::string str, std::string separator);
+    
+    std::vector<int> numbers(std::string s);
   }
 }

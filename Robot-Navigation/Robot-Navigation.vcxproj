@@ -20,14 +20,18 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Grid.cpp" />
+    <ClCompile Include="Node.cpp" />
     <ClCompile Include="RobotNavigation.cpp" />
+    <ClCompile Include="Tree.cpp" />
     <ClCompile Include="util\file.cpp" />
     <ClCompile Include="util\string.cpp" />
     <ClCompile Include="util\vector.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Grid.h" />
+    <ClInclude Include="Node.h" />
     <ClInclude Include="RobotNavigation.h" />
+    <ClInclude Include="Tree.h" />
     <ClInclude Include="util\file.h" />
     <ClInclude Include="util\string.h" />
     <ClInclude Include="util\vector.h" />

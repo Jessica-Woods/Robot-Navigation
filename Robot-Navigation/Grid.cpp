@@ -1,5 +1,4 @@
 #include "Grid.h"
-
 #include "util/file.h"
 #include "util/string.h"
 #include <iostream>
@@ -20,9 +19,9 @@ void Grid::parseGridSize(std::string line) {
 
 void Grid::parseAgent(std::string line) {
   std::vector<int> agentPos = util::string::numbers(line);
-  int x = agentPos[0];
-  int y = agentPos[1];
-  grid[y][x] = Cell::AGENT;
+  agentX = agentPos[0];
+  agentY = agentPos[1];
+  grid[agentY][agentX] = Cell::AGENT;
 }
 
 void Grid::parseGoals(std::string line) {
@@ -74,8 +73,16 @@ std::string Grid::toString() {
   return s;
 }
 
-Cell Grid::get(int x, int y) { return grid[y][x];}
+Cell Grid::get(int x, int y) { return grid.at(y).at(x); }
+
+bool Grid::inBounds(int x, int y) {
+  return x >= 0 && x < width && y >= 0 && y < height;
+}
+bool Grid::isGoalAt(int x, int y) { return inBounds(x, y) && get(x, y) == Cell::GOAL; }
 
 int Grid::getWidth() { return width; }
 
 int Grid::getHeight() { return height; }
+
+int Grid::getAgentX() { return agentX; }
+int Grid::getAgentY() { return agentY; }

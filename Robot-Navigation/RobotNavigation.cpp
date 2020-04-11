@@ -2,10 +2,10 @@
 #include "util/file.h"
 #include "util/string.h"
 #include "Grid.h"
+#include "Tree.h"
 
 #include <iostream>
 #include <stdexcept>
-
 
 void RobotNavigation::whichMethod(std::string method) {
   // Uninformed
@@ -38,6 +38,7 @@ std::string RobotNavigation::run(std::string filename, std::vector<std::string> 
   whichMethod(method);
 
   Grid grid(lines);
+  Tree tree(grid);
 
-  return grid.toString();
+  return tree.toString();
 }

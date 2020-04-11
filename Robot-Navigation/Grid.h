@@ -1,6 +1,7 @@
 #pragma once
 #include <vector>
 #include <string>
+#include <tuple>
 
 enum class Cell { AGENT, GOAL, WALL, EMPTY };
 
@@ -9,6 +10,8 @@ private:
   std::vector <std::vector<Cell>> grid;
   int width;
   int height;
+  int agentX;
+  int agentY;
 
   void parseGridSize(std::string line);
   void parseAgent(std::string line);
@@ -19,7 +22,13 @@ public:
   Grid(const std::vector<std::string>& lines);
   std::string toString();
   Cell get(int x, int y);
+  bool inBounds(int x, int y);
+  bool isGoalAt(int x, int y);
   int getWidth();
   int getHeight();
+
+  int getAgentX();
+  int getAgentY();
+
 };
 

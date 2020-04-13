@@ -32,7 +32,8 @@ public:
   int getAgentX();
   int getAgentY();
 
-  Node* getNode(int x, int y, Node* parent);
+  Node* getEmptyNode(int x, int y, Node* parent);
+  Node* getAgentNode();
 
 };
 

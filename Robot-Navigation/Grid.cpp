@@ -85,6 +85,13 @@ int Grid::getHeight() { return height; }
 int Grid::getAgentX() { return agentX; }
 int Grid::getAgentY() { return agentY; }
 
-Node* Grid::getNode(int x, int y, Node* parent) {
-  return new Node(x, y, isGoalAt(x, y), parent);
+Node* Grid::getEmptyNode(int x, int y, Node* parent) {
+  if (inBounds(x, y) && get(x, y) != Cell::WALL) {
+    return new Node(x, y, isGoalAt(x, y), parent);
+  }
+  return nullptr;
+}
+
+Node* Grid::getAgentNode() {
+  return getEmptyNode(agentX, agentY, nullptr);
 }

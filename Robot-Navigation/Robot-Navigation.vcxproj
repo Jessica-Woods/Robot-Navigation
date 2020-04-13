@@ -19,8 +19,11 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="DFS.cpp" />
+    <ClCompile Include="Frontier.cpp" />
     <ClCompile Include="Grid.cpp" />
     <ClCompile Include="Node.cpp" />
+    <ClCompile Include="NoPathFoundException.cpp" />
     <ClCompile Include="RobotNavigation.cpp" />
     <ClCompile Include="Tree.cpp" />
     <ClCompile Include="util\file.cpp" />
@@ -28,8 +31,11 @@
     <ClCompile Include="util\vector.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="DFS.h" />
+    <ClInclude Include="Frontier.h" />
     <ClInclude Include="Grid.h" />
     <ClInclude Include="Node.h" />
+    <ClInclude Include="NoPathFoundException.h" />
     <ClInclude Include="RobotNavigation.h" />
     <ClInclude Include="Tree.h" />
     <ClInclude Include="util\file.h" />

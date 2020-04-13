@@ -20,7 +20,7 @@ bool Node::isAncestor(Node& node) {
 
 void Node::addChild(Direction direction, Node* child) {
   if (child != nullptr) {
-    this->children[direction] = std::unique_ptr<Node>(child);
+    this->children.push_back(Edge(direction, child));
   }
 }
 
@@ -36,11 +36,15 @@ std::string Node::toString(int level) {
   s << "\n";
 
   for (auto& child : children) {
-    s << child.second->toString(level + 1);
+    s << child.node->toString(level + 1);
   }
   return s.str();
 }
 
 bool operator==(const Node& a, const Node& b) {
   return a.getX() == b.getX() && a.getY() == b.getY() && a.getIsGoal() == b.getIsGoal();
+}
+
+Edge::Edge(Direction dir, Node* node) : direction(dir) {
+  this->node = std::unique_ptr<Node>(node);
 }

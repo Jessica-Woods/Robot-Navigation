@@ -2,12 +2,13 @@
 
 #include <string>
 #include <vector>
+#include "Tree.h"
 
 class RobotNavigation {
 private:
 
 public:
-  void whichMethod(std::string method);
+  Tree whichMethod(std::string method, std::vector<std::string>& lines);
   std::string runFromFile(std::string filepath, std::string method);
   std::string run(std::string filename, std::vector<std::string> text, std::string method);
 };

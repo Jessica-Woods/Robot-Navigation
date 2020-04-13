@@ -8,25 +8,19 @@ Node::Node(int x, int y, bool isGoal, Node* parent) {
   this->isGoal = isGoal;
 }
 
-Node::~Node() {
-  for (auto child : children) {
-    delete child;
-  }
-}
-
-bool Node::isAncestor(Node* node) {
+bool Node::isAncestor(Node& node) {
   Node* current = parent;
   while (current != nullptr) {
-    if(*current == *node) { return true; }
+    if(*current == node) { return true; }
     current = current->parent;
   }
 
   return false;
 }
 
-void Node::addChild(Node* child) {
+void Node::addChild(Direction direction, Node* child) {
   if (child != nullptr) {
-    this->children.push_back(child);
+    this->children[direction] = std::unique_ptr<Node>(child);
   }
 }
 
@@ -41,10 +35,9 @@ std::string Node::toString(int level) {
   if(isGoal) { s << " GOAL"; }
   s << "\n";
 
-  for (auto child : children) {
-    s << child->toString(level + 1);
+  for (auto& child : children) {
+    s << child.second->toString(level + 1);
   }
-
   return s.str();
 }
 

@@ -6,26 +6,35 @@
 
 #include <iostream>
 #include <stdexcept>
+#include <memory>
 
-void RobotNavigation::whichMethod(std::string method) {
+Tree RobotNavigation::whichMethod(std::string method, std::vector<std::string>& lines) {
+  Grid grid(lines);
+  Tree tree(grid);
+
   // Uninformed
   if (method == "DFS") {
-
+    return tree;
   } else if (method == "BFS"){
-  
 
+    return tree;
   // Informed
   } else if (method == "GBFS") {
 
+    return tree;
   } else if (method == "AS") {
 
-
+    return tree;
   // Custom
   } else if (method == "CUS1") {
 
+    return tree;
   } else if (method == "CUS2") {
 
-  } else { throw std::runtime_error("Unknown Method: " + method); }
+    return tree;
+  } else {
+    return tree;
+  } //throw std::runtime_error("Unknown Method: " + method); }
 }
 
 std::string RobotNavigation::runFromFile(std::string filepath, std::string method) {
@@ -35,10 +44,9 @@ std::string RobotNavigation::runFromFile(std::string filepath, std::string metho
 
 std::string RobotNavigation::run(std::string filename, std::vector<std::string> lines, std::string method) {
   std::cout << filename << std::endl;
-  whichMethod(method);
-
-  Grid grid(lines);
-  Tree tree(grid);
+  auto tree = whichMethod("DFS", lines);
+  //Grid grid(lines);
+  //Tree tree(grid);
 
   return tree.toString();
 }

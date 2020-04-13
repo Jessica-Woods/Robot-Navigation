@@ -81,8 +81,10 @@ bool Grid::inBounds(int x, int y) {
 bool Grid::isGoalAt(int x, int y) { return inBounds(x, y) && get(x, y) == Cell::GOAL; }
 
 int Grid::getWidth() { return width; }
-
 int Grid::getHeight() { return height; }
-
 int Grid::getAgentX() { return agentX; }
 int Grid::getAgentY() { return agentY; }
+
+Node* Grid::getNode(int x, int y, Node* parent) {
+  return new Node(x, y, isGoalAt(x, y), parent);
+}

@@ -3,6 +3,8 @@
 #include <string>
 #include <tuple>
 
+#include "Node.h"
+
 enum class Cell { AGENT, GOAL, WALL, EMPTY };
 
 class Grid {
@@ -24,11 +26,13 @@ public:
   Cell get(int x, int y);
   bool inBounds(int x, int y);
   bool isGoalAt(int x, int y);
+
   int getWidth();
   int getHeight();
-
   int getAgentX();
   int getAgentY();
+
+  Node* getNode(int x, int y, Node* parent);
 
 };
 

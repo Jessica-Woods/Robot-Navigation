@@ -15,6 +15,10 @@ Position Position::shift(Direction direction) {
   } else { throw std::exception("Error: position"); }
 }
 
+std::string Position::toString() {
+  return "(" + std::to_string(x) + ", " + std::to_string(y) + ")";
+}
+
 bool operator==(const Position& a, const Position& b) {
   return a.x == b.x && a.y == b.y;
 

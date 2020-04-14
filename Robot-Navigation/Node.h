@@ -29,6 +29,7 @@ public:
   void addChild(Direction direction, Node* child);
 
   Position getPosition() const;
+  Node* getParent() const;
   bool getIsGoal() const;
 
   std::string toString(int level = 0);

@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DFS.cpp" />
+    <ClCompile Include="Direction.cpp" />
     <ClCompile Include="Frontier.cpp" />
     <ClCompile Include="Grid.cpp" />
     <ClCompile Include="Node.cpp" />

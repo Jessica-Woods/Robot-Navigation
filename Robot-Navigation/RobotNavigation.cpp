@@ -50,5 +50,5 @@ std::string RobotNavigation::run(std::string filename, std::vector<std::string> 
   //Grid grid(lines);
   //Tree tree(grid);
 
-  return tree.toString();
+  return tree.toGoalPathString();
 }

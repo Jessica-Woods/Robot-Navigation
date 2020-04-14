@@ -24,6 +24,7 @@ void Node::addChild(Direction direction, Node* child) {
 }
 
 Position Node::getPosition() const { return pos; }
+Node* Node::getParent() const { return parent; }
 bool Node::getIsGoal() const { return isGoal; }
 
 std::string Node::toString(int level) {

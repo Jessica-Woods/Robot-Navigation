@@ -12,8 +12,7 @@ private:
   std::vector <std::vector<Cell>> grid;
   int width;
   int height;
-  int agentX;
-  int agentY;
+  Position agentPos;
 
   void parseGridSize(std::string line);
   void parseAgent(std::string line);
@@ -29,10 +28,9 @@ public:
 
   int getWidth();
   int getHeight();
-  int getAgentX();
-  int getAgentY();
+  Position getAgentPos();
 
-  Node* getEmptyNode(int x, int y, Node* parent);
+  Node* getEmptyNode(Position pos);
   Node* getAgentNode();
 
 };

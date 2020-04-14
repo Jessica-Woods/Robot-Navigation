@@ -1,8 +1,8 @@
 #include "Node.h"
 #include <sstream>
 
-Node::Node(Position p, bool isGoal, Node* parent) : pos(p) {
-  this->parent = parent;
+Node::Node(Position p, bool isGoal) : pos(p) {
+  this->parent = nullptr;
   this->isGoal = isGoal;
 }
 
@@ -19,6 +19,7 @@ bool Node::isAncestor(Node& node) {
 void Node::addChild(Direction direction, Node* child) {
   if (child != nullptr) {
     this->children.push_back(Edge(direction, child));
+    child->parent = this;
   }
 }
 

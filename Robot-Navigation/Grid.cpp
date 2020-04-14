@@ -19,10 +19,9 @@ void Grid::parseGridSize(std::string line) {
 }
 
 void Grid::parseAgent(std::string line) {
-  std::vector<int> agentPos = util::string::numbers(line);
-  agentX = agentPos[0];
-  agentY = agentPos[1];
-  grid[agentY][agentX] = Cell::AGENT;
+  std::vector<int> agent = util::string::numbers(line);
+  agentPos = Position(agent[0], agent[1]);
+  grid[agentPos.y][agentPos.x] = Cell::AGENT;
 }
 
 void Grid::parseGoals(std::string line) {
@@ -49,7 +48,7 @@ void Grid::parseWall(std::string line) {
   }
 }
 
-Grid::Grid(const std::vector<std::string>& lines) {
+Grid::Grid(const std::vector<std::string>& lines) : agentPos(-1, -1) {
   parseGridSize(lines[0]);
   parseAgent(lines[1]);
   parseGoals(lines[2]);
@@ -83,16 +82,15 @@ bool Grid::isGoalAt(int x, int y) { return inBounds(x, y) && get(x, y) == Cell::
 
 int Grid::getWidth() { return width; }
 int Grid::getHeight() { return height; }
-int Grid::getAgentX() { return agentX; }
-int Grid::getAgentY() { return agentY; }
+Position Grid::getAgentPos() { return agentPos; }
 
-Node* Grid::getEmptyNode(int x, int y, Node* parent) {
-  if (inBounds(x, y) && get(x, y) != Cell::WALL) {
-    return new Node(Position(x, y), isGoalAt(x, y), parent);
+Node* Grid::getEmptyNode(Position pos) {
+  if (inBounds(pos.x, pos.y) && get(pos.x, pos.y) != Cell::WALL) {
+    return new Node(Position(pos.x, pos.y), isGoalAt(pos.x, pos.y));
   }
   return nullptr;
 }
 
 Node* Grid::getAgentNode() {
-  return getEmptyNode(agentX, agentY, nullptr);
+  return getEmptyNode(agentPos);
 }

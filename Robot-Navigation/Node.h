@@ -4,8 +4,7 @@
 #include <memory>
 
 #include "Position.h"
-
-enum class Direction { UP, DOWN, LEFT, RIGHT };
+#include "Direction.h"
 
 class Node;
 
@@ -24,7 +23,7 @@ private:
   bool isGoal;
 
 public:
-  Node(Position pos, bool isGoal, Node* parent);
+  Node(Position pos, bool isGoal);
 
   bool isAncestor(Node& node);
   void addChild(Direction direction, Node* child);

@@ -1,10 +1,13 @@
 #pragma once
-class Position {
-private:
-public:
+
+#include "Direction.h"
+
+struct Position {
+  int x;
+  int y;
+
   Position(int x, int y);
-  const int x;
-  const int y;
+  Position shift(Direction direction);
 };
 
 bool operator==(const Position& a, const Position& b);

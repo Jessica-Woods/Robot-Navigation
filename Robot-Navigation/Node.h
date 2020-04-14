@@ -15,9 +15,17 @@ struct Edge {
   Edge(Direction direction, Node* node);
 };
 
+struct ParentEdge {
+  Direction directionToMe;
+  Node* node;
+
+  ParentEdge();
+  ParentEdge(Direction direction, Node* node);
+};
+
 class Node {
 private:
-  Node* parent;
+  ParentEdge parent;
   std::vector<Edge> children;
   Position pos;
   bool isGoal;
@@ -30,6 +38,7 @@ public:
 
   Position getPosition() const;
   Node* getParent() const;
+  Direction getParentDirectionToMe() const;
   bool getIsGoal() const;
 
   std::string toString(int level = 0);

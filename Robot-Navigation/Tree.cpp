@@ -10,8 +10,8 @@ std::string Tree::toGoalPathString() {
   auto current = goal;
   std::string result;
   
-  while (current != nullptr) {
-    result = current->getPosition().toString() + "\n" + result;
+  while (current != nullptr && current != root.get()) {
+    result = to_string(current->getParentDirectionToMe()) + "; " + result;
     current = current->getParent();
   }
 

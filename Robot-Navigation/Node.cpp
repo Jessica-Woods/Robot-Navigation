@@ -2,15 +2,14 @@
 #include <sstream>
 
 Node::Node(Position p, bool isGoal) : pos(p) {
-  this->parent = nullptr;
   this->isGoal = isGoal;
 }
 
 bool Node::isAncestor(Node& node) {
-  Node* current = parent;
+  Node* current = parent.node;
   while (current != nullptr) {
     if(*current == node) { return true; }
-    current = current->parent;
+    current = current->parent.node;
   }
 
   return false;
@@ -18,13 +17,14 @@ bool Node::isAncestor(Node& node) {
 
 void Node::addChild(Direction direction, Node* child) {
   if (child != nullptr) {
+    child->parent = ParentEdge(direction, this);
     this->children.push_back(Edge(direction, child));
-    child->parent = this;
   }
 }
 
 Position Node::getPosition() const { return pos; }
-Node* Node::getParent() const { return parent; }
+Node* Node::getParent() const { return parent.node; }
+Direction Node::getParentDirectionToMe() const { return parent.directionToMe; }
 bool Node::getIsGoal() const { return isGoal; }
 
 std::string Node::toString(int level) {
@@ -48,3 +48,6 @@ bool operator==(const Node& a, const Node& b) {
 Edge::Edge(Direction dir, Node* node) : direction(dir) {
   this->node = std::unique_ptr<Node>(node);
 }
+
+ParentEdge::ParentEdge() : directionToMe(Direction::UNKNOWN), node(nullptr) {}
+ParentEdge::ParentEdge(Direction dir, Node* n) : directionToMe(dir), node(n) {}

@@ -2,6 +2,7 @@
 #include "util/file.h"
 #include "util/string.h"
 #include <iostream>
+#include "Position.h"
 
 void Grid::parseGridSize(std::string line) {
   std::vector<int> gridSize = util::string::numbers(line);
@@ -87,7 +88,7 @@ int Grid::getAgentY() { return agentY; }
 
 Node* Grid::getEmptyNode(int x, int y, Node* parent) {
   if (inBounds(x, y) && get(x, y) != Cell::WALL) {
-    return new Node(x, y, isGoalAt(x, y), parent);
+    return new Node(Position(x, y), isGoalAt(x, y), parent);
   }
   return nullptr;
 }

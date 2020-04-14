@@ -2,7 +2,8 @@
 #include <vector>
 #include <string>
 #include <memory>
-#include <unordered_map>
+
+#include "Position.h"
 
 enum class Direction { UP, DOWN, LEFT, RIGHT };
 
@@ -19,18 +20,16 @@ class Node {
 private:
   Node* parent;
   std::vector<Edge> children;
-  int x;
-  int y;
+  Position pos;
   bool isGoal;
 
 public:
-  Node(int x, int y, bool isGoal, Node* parent);
+  Node(Position pos, bool isGoal, Node* parent);
 
   bool isAncestor(Node& node);
   void addChild(Direction direction, Node* child);
 
-  int getX() const;
-  int getY() const;
+  Position getPosition() const;
   bool getIsGoal() const;
 
   std::string toString(int level = 0);

@@ -7,8 +7,9 @@ Frontier::Frontier(Node* node) {
 
 Node* Frontier::push(Node* node) {
   if (node == nullptr) { return nullptr; }
-  if (node->isAncestor(*node)) { return nullptr; }
+  if (visited.find(node->getPosition()) != visited.end()) { return nullptr; }
 
+  visited.insert(node->getPosition());
   frontier.push_back(node);
   return node;
 }

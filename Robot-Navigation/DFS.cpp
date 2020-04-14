@@ -16,11 +16,11 @@ Tree DFS::search(Grid& grid) {
       return Tree(root, node);
     }
 
-    int x = node->getX();
-    int y = node->getY();
+    int x = node->getPosition().x;
+    int y = node->getPosition().y;
 
     // We want UP -> LEFT -> DOWN -> RIGHT but we insert in reverse because our 
-    // DFS is implemented with a stack. 
+    // DFS is implemented with a stack.
     Node* right = frontier.push(grid.getEmptyNode(x + 1, y, node));
     Node* down = frontier.push(grid.getEmptyNode(x, y + 1, node));
     Node* left = frontier.push(grid.getEmptyNode(x - 1, y, node));

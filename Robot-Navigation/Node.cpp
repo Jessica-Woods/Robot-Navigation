@@ -1,10 +1,8 @@
 #include "Node.h"
 #include <sstream>
 
-Node::Node(int x, int y, bool isGoal, Node* parent) {
+Node::Node(Position p, bool isGoal, Node* parent) : pos(p) {
   this->parent = parent;
-  this->x = x;
-  this->y = y;
   this->isGoal = isGoal;
 }
 
@@ -24,14 +22,13 @@ void Node::addChild(Direction direction, Node* child) {
   }
 }
 
-int Node::getX() const { return x; }
-int Node::getY() const { return y; }
+Position Node::getPosition() const { return pos; }
 bool Node::getIsGoal() const { return isGoal; }
 
 std::string Node::toString(int level) {
   std::stringstream s;
   std::string indent(level * 2, ' ');
-  s << indent << "(x: " << x << ", y: " << y << ")";
+  s << indent << "(x: " << pos.x << ", y: " << pos.y << ")";
   if(isGoal) { s << " GOAL"; }
   s << "\n";
 
@@ -42,7 +39,8 @@ std::string Node::toString(int level) {
 }
 
 bool operator==(const Node& a, const Node& b) {
-  return a.getX() == b.getX() && a.getY() == b.getY() && a.getIsGoal() == b.getIsGoal();
+  return a.getPosition() == b.getPosition()
+  && a.getIsGoal() == b.getIsGoal();
 }
 
 Edge::Edge(Direction dir, Node* node) : direction(dir) {

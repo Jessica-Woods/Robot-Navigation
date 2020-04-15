@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BFS.cpp" />
     <ClCompile Include="DFS.cpp" />
     <ClCompile Include="Direction.cpp" />
     <ClCompile Include="Frontier.cpp" />
@@ -36,6 +37,7 @@
     <ClCompile Include="util\vector.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BFS.h" />
     <ClInclude Include="DFS.h" />
     <ClInclude Include="Direction.h" />
     <ClInclude Include="Frontier.h" />

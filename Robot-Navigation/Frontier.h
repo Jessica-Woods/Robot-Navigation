@@ -16,6 +16,7 @@ public:
   Frontier(Node* node);
   Node* push(Node* node);
   Node* popLastIn();
+  Node* popFirstIn();
   bool empty();
 };
 

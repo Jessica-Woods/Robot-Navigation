@@ -1,8 +1,4 @@
 #include "RobotNavigation.h"
-#include "util/file.h"
-#include "util/string.h"
-#include "Grid.h"
-#include "Tree.h"
 
 #include <iostream>
 #include <stdexcept>
@@ -10,7 +6,12 @@
 #include <string>
 #include <sstream>
 
+#include "util/file.h"
+#include "util/string.h"
+#include "Grid.h"
+#include "Tree.h"
 #include "DFS.h"
+#include "BFS.h"
 
 Tree RobotNavigation::runSearch(std::string method, std::vector<std::string>& lines) {
   Grid grid(Grid::fromLines(lines));
@@ -18,9 +19,7 @@ Tree RobotNavigation::runSearch(std::string method, std::vector<std::string>& li
 
   // Uninformed
   if (method == "DFS") { return DFS::search(grid); } 
-  //else if (method == "BFS") {
-
-  //  return tree;
+  else if (method == "BFS") { return BFS::search(grid); }
   //// Informed
   //} else if (method == "GBFS") {
 
@@ -38,7 +37,7 @@ Tree RobotNavigation::runSearch(std::string method, std::vector<std::string>& li
   //} else {
   //  return tree;
   //} //throw std::runtime_error("Unknown Method: " + method); }
-  return DFS::search(grid);
+  else { throw std::runtime_error("Unknown Method: " + method); }
 }
 
 std::string RobotNavigation::runFromFile(std::string filepath, std::string method) {
@@ -47,7 +46,7 @@ std::string RobotNavigation::runFromFile(std::string filepath, std::string metho
 }
 
 std::string RobotNavigation::run(std::string filename, std::vector<std::string> lines, std::string method) {
-  auto tree = runSearch("DFS", lines);
+  auto tree = runSearch(method, lines);
   std::stringstream s;
   s << filename << " " << method << " " << std::to_string(tree.totalNodes()) << std::endl;
   s << tree.toGoalPathString();

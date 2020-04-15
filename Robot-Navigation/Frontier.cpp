@@ -20,6 +20,13 @@ Node* Frontier::popLastIn() {
   return node;
 }
 
+Node* Frontier::popFirstIn() {
+  Node* node = frontier.front();
+  frontier.pop_front();
+  visited.insert(node->getPosition());
+  return node;
+}
+
 bool Frontier::empty() { 
   return frontier.empty(); 
 }

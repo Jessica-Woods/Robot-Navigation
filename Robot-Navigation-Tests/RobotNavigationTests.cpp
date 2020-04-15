@@ -20,8 +20,7 @@ TEST(RobotNavigation, find_path_with_dfs) {
   std::string result = program.run("test_filename", file, "DFS");
 
   std::string expected = 
-    "test_filename DFS 50\n"
-    "up; right; down; down; right; right; right; up; up; right; right; right;";
-    
+    "test_filename DFS 41\n"
+    "up; right; down; down; right; right; down; right; up; up; up; right; down; down; down; right; up; up; up; right;";
   EXPECT_EQ(result, expected);
 }

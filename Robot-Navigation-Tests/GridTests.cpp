@@ -1,6 +1,7 @@
 #include "gtest/gtest.h"
 
 #include "../Robot-Navigation/Grid.h"
+#include "../Robot-Navigation/InvalidGridException.h"
 
 TEST(Grid, assignment_example_test) {
   std::vector<std::string> file = {
@@ -34,4 +35,12 @@ TEST(Grid, assignment_example_test) {
       EXPECT_EQ(grid.get(x, y), expected[y][x]) << "Grid position (x:" << x << ", y:" << y << ") does not match";
     }
   }
+}
+
+TEST(Grid, should_throw_when_agent_is_replaced) {
+  // [A][ ][ ]
+  // [ ][ ][ ]
+  // [ ][ ][G]
+  Grid grid(3, 3, Position(0, 0));
+  EXPECT_THROW(grid.addGoal(Position(0, 0)), InvalidGridException);
 }

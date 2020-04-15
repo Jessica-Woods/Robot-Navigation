@@ -10,6 +10,7 @@ private:
 
 public:
   Tree(Node* root, Node* goal);
+  std::vector<Direction> goalPath();
   std::string toGoalPathString();
   std::string toString();
   int totalNodes();

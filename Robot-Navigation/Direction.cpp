@@ -8,3 +8,7 @@ std::string to_string(Direction dir) {
   else if(dir == Direction::RIGHT) { return "right"; }
   else { throw std::exception("Unknown direction"); }
 }
+
+std::ostream& operator<<(std::ostream& stream, const Direction& direction) {
+  return stream << to_string(direction);
+}

@@ -8,6 +8,7 @@
 #include <stdexcept>
 #include <memory>
 #include <string>
+#include <sstream>
 
 #include "DFS.h"
 
@@ -47,7 +48,11 @@ std::string RobotNavigation::runFromFile(std::string filepath, std::string metho
 
 std::string RobotNavigation::run(std::string filename, std::vector<std::string> lines, std::string method) {
   auto tree = whichMethod("DFS", lines);
-
-  std::cout << filename << " " << method << " " << std::to_string(tree.totalNodes()) << std::endl;
-  return tree.toGoalPathString();
+  std::stringstream s;
+  s << filename << " " << method << " " << std::to_string(tree.totalNodes()) << std::endl;
+  s << tree.toGoalPathString();
+  
+  auto result = s.str();
+  util::string::trim(result);
+  return result;
 }

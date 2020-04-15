@@ -1,7 +1,10 @@
 #include "Grid.h"
+
+#include <iostream>
+
 #include "util/file.h"
 #include "util/string.h"
-#include <iostream>
+#include "InvalidGridException.h"
 #include "Position.h"
 
 void Grid::parseGridSize(std::string line) {
@@ -46,6 +49,43 @@ void Grid::parseWall(std::string line) {
       grid[y + yOffset][x + xOffset] = Cell::WALL;
     }
   }
+}
+
+Grid::Grid(int width, int height, Position ap) : agentPos(ap) {
+  this->width = width;
+  this->height = height;
+
+  for (int i = 0; i < height; i++) {
+    std::vector<Cell> cols;
+    for (int j = 0; j < width; j++) {
+      cols.push_back(Cell::EMPTY);
+    }
+    grid.push_back(cols);
+  }
+
+  grid[agentPos.y][agentPos.x] = Cell::AGENT;
+}
+
+void Grid::validate() {
+  if (get(agentPos.x, agentPos.y) != Cell::AGENT) {
+    throw InvalidGridException();
+  }
+}
+
+Grid& Grid::addGoal(Position goal) {
+  grid[goal.y][goal.x] = Cell::GOAL;
+  validate();
+  return *this;
+}
+
+Grid& Grid::addWall(Position wall, int width, int height) {
+  for (int yOffset = 0; yOffset < height; yOffset++) {
+    for (int xOffset = 0; xOffset < width; xOffset++) {
+      grid[wall.y + yOffset][wall.x + xOffset] = Cell::WALL;
+    }
+  }
+  validate();
+  return *this;
 }
 
 Grid::Grid(const std::vector<std::string>& lines) : agentPos(-1, -1) {

@@ -7,13 +7,25 @@ Tree::Tree(Node* root, Node* goal) {
   this->goal = goal;
 }
 
-std::string Tree::toGoalPathString() {
+std::vector<Direction> Tree::goalPath() {
+  std::vector<Direction> goals;
   auto current = goal;
-  std::string result;
-  
+
   while (current != nullptr && current != root.get()) {
-    result = to_string(current->getParentDirectionToMe()) + "; " + result;
+    goals.push_back(current->getParentDirectionToMe());
     current = current->getParent();
+  }
+
+  std::reverse(goals.begin(), goals.end());
+  return goals;
+}
+
+std::string Tree::toGoalPathString() {
+  std::string result;
+
+  auto vectorPath = goalPath();
+  for (auto path : vectorPath) {
+    result += to_string(path) + "; ";
   }
 
   return result;

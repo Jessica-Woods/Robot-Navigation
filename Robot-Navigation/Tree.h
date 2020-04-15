@@ -12,4 +12,5 @@ public:
   Tree(Node* root, Node* goal);
   std::string toGoalPathString();
   std::string toString();
+  int totalNodes();
 };

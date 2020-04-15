@@ -27,6 +27,15 @@ Node* Node::getParent() const { return parent.node; }
 Direction Node::getParentDirectionToMe() const { return parent.directionToMe; }
 bool Node::getIsGoal() const { return isGoal; }
 
+int Node::totalNodes() {
+  int result = 1;
+  for (auto& child : children) {
+    result += child.node->totalNodes();
+  }
+
+  return result;
+}
+
 std::string Node::toString(int level) {
   std::stringstream s;
   std::string indent(level * 2, ' ');

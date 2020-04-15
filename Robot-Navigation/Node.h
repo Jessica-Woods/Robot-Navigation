@@ -41,6 +41,7 @@ public:
   Direction getParentDirectionToMe() const;
   bool getIsGoal() const;
 
+  int totalNodes();
   std::string toString(int level = 0);
 };
 

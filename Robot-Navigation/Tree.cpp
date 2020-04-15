@@ -1,5 +1,6 @@
 #include "Tree.h"
 
+#include <stack>
 
 Tree::Tree(Node* root, Node* goal) {
   this->root = std::unique_ptr<Node>(root);
@@ -20,4 +21,8 @@ std::string Tree::toGoalPathString() {
 
 std::string Tree::toString() {
   return root->toString();
+}
+
+int Tree::totalNodes() {
+  return root.get()->totalNodes();
 }

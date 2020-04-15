@@ -7,6 +7,7 @@
 #include <iostream>
 #include <stdexcept>
 #include <memory>
+#include <string>
 
 #include "DFS.h"
 
@@ -45,10 +46,8 @@ std::string RobotNavigation::runFromFile(std::string filepath, std::string metho
 }
 
 std::string RobotNavigation::run(std::string filename, std::vector<std::string> lines, std::string method) {
-  std::cout << filename << std::endl;
   auto tree = whichMethod("DFS", lines);
-  //Grid grid(lines);
-  //Tree tree(grid);
 
+  std::cout << filename << " " << method << " " << std::to_string(tree.totalNodes()) << std::endl;
   return tree.toGoalPathString();
 }

@@ -4,40 +4,40 @@
 #include <tuple>
 
 #include "Node.h"
+#include "Position.h"
+#include "Size.h"
+#include "Rectangle.h"
 
 enum class Cell { AGENT, GOAL, WALL, EMPTY };
 
 class Grid {
 private:
-  std::vector <std::vector<Cell>> grid;
-  int width;
-  int height;
+  std::vector<std::vector<Cell>> grid;
+  Size size;
   Position agentPos;
 
   void validate();
-
-  void parseGridSize(std::string line);
-  void parseAgent(std::string line);
-  void parseGoals(std::string line);
-  void parseWall(std::string line);
-  
 public:
-  Grid(int width, int height, Position agentPos);
-  Grid(const std::vector<std::string>& lines);
+  Grid(Size size, Position agentPos);
 
   Grid& addGoal(Position goal);
-  Grid& addWall(Position wall, int width = 1, int height = 1);
+  Grid& addWall(Rectangle wall);
 
-  std::string toString();
-  Cell get(int x, int y);
   bool inBounds(int x, int y);
   bool isGoalAt(int x, int y);
 
-  int getWidth();
-  int getHeight();
+  Cell get(int x, int y);
+  Size getSize();
   Position getAgentPos();
-
   Node* getEmptyNode(Position pos);
   Node* getAgentNode();
+
+  std::string toString();
+
+  static Grid fromLines(const std::vector<std::string>& lines);
+  static Size parseGridSize(std::string line);
+  static Position parseAgent(std::string line);
+  static std::vector<Position> parseGoals(std::string line);
+  static Rectangle parseWall(std::string line);
 };
 

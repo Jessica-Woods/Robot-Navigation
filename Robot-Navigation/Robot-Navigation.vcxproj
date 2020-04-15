@@ -27,7 +27,9 @@
     <ClCompile Include="Node.cpp" />
     <ClCompile Include="NoPathFoundException.cpp" />
     <ClCompile Include="Position.cpp" />
+    <ClCompile Include="Rectangle.cpp" />
     <ClCompile Include="RobotNavigation.cpp" />
+    <ClCompile Include="Size.cpp" />
     <ClCompile Include="Tree.cpp" />
     <ClCompile Include="util\file.cpp" />
     <ClCompile Include="util\string.cpp" />
@@ -42,7 +44,9 @@
     <ClInclude Include="Node.h" />
     <ClInclude Include="NoPathFoundException.h" />
     <ClInclude Include="Position.h" />
+    <ClInclude Include="Rectangle.h" />
     <ClInclude Include="RobotNavigation.h" />
+    <ClInclude Include="Size.h" />
     <ClInclude Include="Tree.h" />
     <ClInclude Include="util\file.h" />
     <ClInclude Include="util\string.h" />

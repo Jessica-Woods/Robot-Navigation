@@ -3,7 +3,7 @@
 #include "../Robot-Navigation/Grid.h"
 #include "../Robot-Navigation/InvalidGridException.h"
 
-TEST(Grid, assignment_example_test) {
+TEST(Grid, parse_assignment_example_test) {
   std::vector<std::string> file = {
     "[5,11]",
     "(0,1)",
@@ -17,7 +17,7 @@ TEST(Grid, assignment_example_test) {
     "(8,4,2,1)"
   };
 
-  Grid grid(file);
+  Grid grid = Grid::fromLines(file);
 
   std::vector<std::vector<Cell>> expected = {
     { Cell::EMPTY, Cell::EMPTY, Cell::WALL , Cell::WALL , Cell::EMPTY, Cell::EMPTY, Cell::EMPTY, Cell::GOAL , Cell::WALL , Cell::EMPTY, Cell::WALL  },
@@ -27,8 +27,7 @@ TEST(Grid, assignment_example_test) {
     { Cell::EMPTY, Cell::EMPTY, Cell::WALL , Cell::WALL , Cell::WALL , Cell::WALL , Cell::EMPTY, Cell::EMPTY, Cell::WALL , Cell::WALL , Cell::EMPTY }
   };
 
-  EXPECT_EQ(grid.getWidth(), 11);
-  EXPECT_EQ(grid.getHeight(), 5);
+  EXPECT_EQ(grid.getSize(), Size(11, 5));
 
   for (int x = 0; x < 11; ++x) {
     for (int y = 0; y < 5; ++y) {
@@ -41,6 +40,6 @@ TEST(Grid, should_throw_when_agent_is_replaced) {
   // [A][ ][ ]
   // [ ][ ][ ]
   // [ ][ ][G]
-  Grid grid(3, 3, Position(0, 0));
+  Grid grid(Size(3, 3), Position(0, 0));
   EXPECT_THROW(grid.addGoal(Position(0, 0)), InvalidGridException);
 }

@@ -12,8 +12,8 @@
 
 #include "DFS.h"
 
-Tree RobotNavigation::whichMethod(std::string method, std::vector<std::string>& lines) {
-  Grid grid(lines);
+Tree RobotNavigation::runSearch(std::string method, std::vector<std::string>& lines) {
+  Grid grid(Grid::fromLines(lines));
   //Tree tree(grid);
 
   // Uninformed
@@ -47,7 +47,7 @@ std::string RobotNavigation::runFromFile(std::string filepath, std::string metho
 }
 
 std::string RobotNavigation::run(std::string filename, std::vector<std::string> lines, std::string method) {
-  auto tree = whichMethod("DFS", lines);
+  auto tree = runSearch("DFS", lines);
   std::stringstream s;
   s << filename << " " << method << " " << std::to_string(tree.totalNodes()) << std::endl;
   s << tree.toGoalPathString();

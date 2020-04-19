@@ -105,6 +105,9 @@
     <ClCompile Include="tree\PriorityQueueFrontier.cpp">
       <Filter>Source Files\tree</Filter>
     </ClCompile>
+    <ClCompile Include="search_algorithms\AStar.cpp">
+      <Filter>Source Files\search_algorithms</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="RobotNavigation.h">
@@ -166,6 +169,9 @@
     </ClInclude>
     <ClInclude Include="tree\PriorityQueueFrontier.h">
       <Filter>Header Files\tree</Filter>
+    </ClInclude>
+    <ClInclude Include="search_algorithms\AStar.h">
+      <Filter>Header Files\search_agorithms</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

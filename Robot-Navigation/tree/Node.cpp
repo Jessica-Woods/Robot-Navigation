@@ -18,6 +18,7 @@ bool Node::isAncestor(Node& node) {
 void Node::addChild(Direction direction, Node* child) {
   if (child != nullptr) {
     child->parent = ParentEdge(direction, this);
+    child->distanceFromRoot = distanceFromRoot + 1;
     this->children.push_back(Edge(direction, child));
   }
 }
@@ -26,6 +27,7 @@ Position Node::getPosition() const { return pos; }
 Node* Node::getParent() const { return parent.node; }
 Direction Node::getParentDirectionToMe() const { return parent.directionToMe; }
 bool Node::getIsGoal() const { return isGoal; }
+int Node::getDistanceFromRoot() const { return distanceFromRoot; }
 
 int Node::totalNodes() {
   int result = 1;

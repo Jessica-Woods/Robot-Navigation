@@ -13,6 +13,7 @@
 #include "search_algorithms/DFS.h"
 #include "search_algorithms/BFS.h"
 #include "search_algorithms/GBFS.h"
+#include "search_algorithms/AStar.h"
 
 Tree RobotNavigation::runSearch(std::string method, std::vector<std::string>& lines) {
   Grid grid(Grid::fromLines(lines));
@@ -24,19 +25,11 @@ Tree RobotNavigation::runSearch(std::string method, std::vector<std::string>& li
 
   // Informed
   else if (method == "GBFS") { return GBFS::search(grid); }
-  //} else if (method == "AS") {
+  else if (method == "AS") { return AStar::search(grid); }
 
-  //  return tree;
-  //// Custom
-  //} else if (method == "CUS1") {
-
-  //  return tree;
-  //} else if (method == "CUS2") {
-
-  //  return tree;
-  //} else {
-  //  return tree;
-  //} //throw std::runtime_error("Unknown Method: " + method); }
+  // Custom
+  //} else if (method == "CUS1") {return tree;}
+  //} else if (method == "CUS2") {return tree;}
   else { throw std::runtime_error("Unknown Method: " + method); }
 }
 

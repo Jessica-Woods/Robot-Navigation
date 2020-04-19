@@ -1,10 +1,10 @@
-#include "GBFS.h"
+#include "AStar.h"
 
 #include "../tree/PriorityQueueFrontier.h"
 #include "../tree/Visited.h"
 #include "../exceptions/NoPathFoundException.h"
 
-Tree GBFS::search(Grid& grid) {
+Tree AStar::search(Grid& grid) {
   PriorityQueueFrontier frontier;
   Visited visited;
 
@@ -26,7 +26,7 @@ Tree GBFS::search(Grid& grid) {
         node->addChild(direction, child);
 
         int priority = grid.manhattanDistanceToClosestGoal(child->getPosition());
-        frontier.push(child, priority);
+        frontier.push(child, priority + child->getDistanceFromRoot());
       }
     }
   }

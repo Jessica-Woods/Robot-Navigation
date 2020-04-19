@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="search_algorithms\AStar.cpp" />
     <ClCompile Include="search_algorithms\BFS.cpp" />
     <ClCompile Include="search_algorithms\DFS.cpp" />
     <ClCompile Include="grid\Direction.cpp" />
@@ -41,6 +42,7 @@
     <ClCompile Include="util\vector.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="search_algorithms\AStar.h" />
     <ClInclude Include="search_algorithms\BFS.h" />
     <ClInclude Include="search_algorithms\DFS.h" />
     <ClInclude Include="grid\Direction.h" />

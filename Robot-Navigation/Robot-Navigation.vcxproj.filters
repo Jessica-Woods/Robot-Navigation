@@ -57,40 +57,40 @@
     <ClCompile Include="util\vector.cpp">
       <Filter>Source Files\util</Filter>
     </ClCompile>
-    <ClCompile Include="DFS.cpp">
+    <ClCompile Include="search_algorithms\BFS.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="search_algorithms\DFS.cpp">
       <Filter>Source Files\search_algorithms</Filter>
     </ClCompile>
-    <ClCompile Include="InvalidGridException.cpp">
+    <ClCompile Include="tree\Tree.cpp">
+      <Filter>Source Files\tree</Filter>
+    </ClCompile>
+    <ClCompile Include="tree\Frontier.cpp">
+      <Filter>Source Files\tree</Filter>
+    </ClCompile>
+    <ClCompile Include="tree\Node.cpp">
+      <Filter>Source Files\tree</Filter>
+    </ClCompile>
+    <ClCompile Include="exceptions\NoPathFoundException.cpp">
       <Filter>Source Files\exceptions</Filter>
     </ClCompile>
-    <ClCompile Include="NoPathFoundException.cpp">
+    <ClCompile Include="exceptions\InvalidGridException.cpp">
       <Filter>Source Files\exceptions</Filter>
     </ClCompile>
-    <ClCompile Include="Tree.cpp">
-      <Filter>Source Files\tree</Filter>
-    </ClCompile>
-    <ClCompile Include="Node.cpp">
-      <Filter>Source Files\tree</Filter>
-    </ClCompile>
-    <ClCompile Include="Frontier.cpp">
-      <Filter>Source Files\tree</Filter>
-    </ClCompile>
-    <ClCompile Include="BFS.cpp">
-      <Filter>Source Files\search_algorithms</Filter>
-    </ClCompile>
-    <ClCompile Include="Direction.cpp">
+    <ClCompile Include="grid\Direction.cpp">
       <Filter>Source Files\grid</Filter>
     </ClCompile>
-    <ClCompile Include="Grid.cpp">
+    <ClCompile Include="grid\Grid.cpp">
       <Filter>Source Files\grid</Filter>
     </ClCompile>
-    <ClCompile Include="Rectangle.cpp">
+    <ClCompile Include="grid\Position.cpp">
       <Filter>Source Files\grid</Filter>
     </ClCompile>
-    <ClCompile Include="Position.cpp">
+    <ClCompile Include="grid\Rectangle.cpp">
       <Filter>Source Files\grid</Filter>
     </ClCompile>
-    <ClCompile Include="Size.cpp">
+    <ClCompile Include="grid\Size.cpp">
       <Filter>Source Files\grid</Filter>
     </ClCompile>
   </ItemGroup>
@@ -107,40 +107,40 @@
     <ClInclude Include="util\vector.h">
       <Filter>Header Files\util</Filter>
     </ClInclude>
-    <ClInclude Include="DFS.h">
+    <ClInclude Include="search_algorithms\BFS.h">
       <Filter>Header Files\search_agorithms</Filter>
     </ClInclude>
-    <ClInclude Include="NoPathFoundException.h">
-      <Filter>Header Files\exceptions</Filter>
-    </ClInclude>
-    <ClInclude Include="InvalidGridException.h">
-      <Filter>Header Files\exceptions</Filter>
-    </ClInclude>
-    <ClInclude Include="Frontier.h">
-      <Filter>Header Files\tree</Filter>
-    </ClInclude>
-    <ClInclude Include="Node.h">
-      <Filter>Header Files\tree</Filter>
-    </ClInclude>
-    <ClInclude Include="Tree.h">
-      <Filter>Header Files\tree</Filter>
-    </ClInclude>
-    <ClInclude Include="BFS.h">
+    <ClInclude Include="search_algorithms\DFS.h">
       <Filter>Header Files\search_agorithms</Filter>
     </ClInclude>
-    <ClInclude Include="Direction.h">
+    <ClInclude Include="tree\Frontier.h">
+      <Filter>Header Files\tree</Filter>
+    </ClInclude>
+    <ClInclude Include="tree\Node.h">
+      <Filter>Header Files\tree</Filter>
+    </ClInclude>
+    <ClInclude Include="tree\Tree.h">
+      <Filter>Header Files\tree</Filter>
+    </ClInclude>
+    <ClInclude Include="exceptions\NoPathFoundException.h">
+      <Filter>Header Files\exceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="exceptions\InvalidGridException.h">
+      <Filter>Header Files\exceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="grid\Size.h">
       <Filter>Header Files\grid</Filter>
     </ClInclude>
-    <ClInclude Include="Grid.h">
+    <ClInclude Include="grid\Rectangle.h">
       <Filter>Header Files\grid</Filter>
     </ClInclude>
-    <ClInclude Include="Position.h">
+    <ClInclude Include="grid\Position.h">
       <Filter>Header Files\grid</Filter>
     </ClInclude>
-    <ClInclude Include="Rectangle.h">
+    <ClInclude Include="grid\Grid.h">
       <Filter>Header Files\grid</Filter>
     </ClInclude>
-    <ClInclude Include="Size.h">
+    <ClInclude Include="grid\Direction.h">
       <Filter>Header Files\grid</Filter>
     </ClInclude>
   </ItemGroup>

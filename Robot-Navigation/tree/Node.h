@@ -3,8 +3,8 @@
 #include <string>
 #include <memory>
 
-#include "Position.h"
-#include "Direction.h"
+#include "../grid/Position.h"
+#include "../grid/Direction.h"
 
 class Node;
 

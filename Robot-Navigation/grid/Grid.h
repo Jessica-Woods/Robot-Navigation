@@ -3,7 +3,7 @@
 #include <string>
 #include <tuple>
 
-#include "Node.h"
+#include "../tree/Node.h"
 #include "Position.h"
 #include "Size.h"
 #include "Rectangle.h"

@@ -1,8 +1,8 @@
 #include "Grid.h"
 
-#include "util/file.h"
-#include "util/string.h"
-#include "InvalidGridException.h"
+#include "../util/file.h"
+#include "../util/string.h"
+#include "../exceptions/InvalidGridException.h"
 
 void Grid::validate() {
   if (get(agentPos.x, agentPos.y) != Cell::AGENT) {

@@ -2,8 +2,8 @@
 
 #include <deque>
 
-#include "Frontier.h"
-#include "NoPathFoundException.h"
+#include "../tree/Frontier.h"
+#include "../exceptions/NoPathFoundException.h"
 
 Tree BFS::search(Grid& grid) {
   auto root = grid.getAgentNode();

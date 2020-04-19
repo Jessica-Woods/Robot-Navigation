@@ -8,10 +8,10 @@
 
 #include "util/file.h"
 #include "util/string.h"
-#include "Grid.h"
-#include "Tree.h"
-#include "DFS.h"
-#include "BFS.h"
+#include "grid/Grid.h"
+#include "tree/Tree.h"
+#include "search_algorithms/DFS.h"
+#include "search_algorithms/BFS.h"
 
 Tree RobotNavigation::runSearch(std::string method, std::vector<std::string>& lines) {
   Grid grid(Grid::fromLines(lines));

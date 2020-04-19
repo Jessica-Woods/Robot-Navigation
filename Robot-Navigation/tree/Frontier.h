@@ -4,7 +4,7 @@
 #include <set>
 
 #include "Node.h"
-#include "Position.h"
+#include "../grid/Position.h"
 
 class Frontier {
 private:

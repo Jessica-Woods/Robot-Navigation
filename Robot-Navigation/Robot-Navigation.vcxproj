@@ -19,37 +19,37 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="BFS.cpp" />
-    <ClCompile Include="DFS.cpp" />
-    <ClCompile Include="Direction.cpp" />
-    <ClCompile Include="Frontier.cpp" />
-    <ClCompile Include="Grid.cpp" />
-    <ClCompile Include="InvalidGridException.cpp" />
-    <ClCompile Include="Node.cpp" />
-    <ClCompile Include="NoPathFoundException.cpp" />
-    <ClCompile Include="Position.cpp" />
-    <ClCompile Include="Rectangle.cpp" />
+    <ClCompile Include="search_algorithms\BFS.cpp" />
+    <ClCompile Include="search_algorithms\DFS.cpp" />
+    <ClCompile Include="grid\Direction.cpp" />
+    <ClCompile Include="tree\Frontier.cpp" />
+    <ClCompile Include="grid\Grid.cpp" />
+    <ClCompile Include="exceptions\InvalidGridException.cpp" />
+    <ClCompile Include="tree\Node.cpp" />
+    <ClCompile Include="exceptions\NoPathFoundException.cpp" />
+    <ClCompile Include="grid\Position.cpp" />
+    <ClCompile Include="grid\Rectangle.cpp" />
     <ClCompile Include="RobotNavigation.cpp" />
-    <ClCompile Include="Size.cpp" />
-    <ClCompile Include="Tree.cpp" />
+    <ClCompile Include="grid\Size.cpp" />
+    <ClCompile Include="tree\Tree.cpp" />
     <ClCompile Include="util\file.cpp" />
     <ClCompile Include="util\string.cpp" />
     <ClCompile Include="util\vector.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="BFS.h" />
-    <ClInclude Include="DFS.h" />
-    <ClInclude Include="Direction.h" />
-    <ClInclude Include="Frontier.h" />
-    <ClInclude Include="Grid.h" />
-    <ClInclude Include="InvalidGridException.h" />
-    <ClInclude Include="Node.h" />
-    <ClInclude Include="NoPathFoundException.h" />
-    <ClInclude Include="Position.h" />
-    <ClInclude Include="Rectangle.h" />
+    <ClInclude Include="search_algorithms\BFS.h" />
+    <ClInclude Include="search_algorithms\DFS.h" />
+    <ClInclude Include="grid\Direction.h" />
+    <ClInclude Include="tree\Frontier.h" />
+    <ClInclude Include="grid\Grid.h" />
+    <ClInclude Include="exceptions\InvalidGridException.h" />
+    <ClInclude Include="tree\Node.h" />
+    <ClInclude Include="exceptions\NoPathFoundException.h" />
+    <ClInclude Include="grid\Position.h" />
+    <ClInclude Include="grid\Rectangle.h" />
     <ClInclude Include="RobotNavigation.h" />
-    <ClInclude Include="Size.h" />
-    <ClInclude Include="Tree.h" />
+    <ClInclude Include="grid\Size.h" />
+    <ClInclude Include="tree\Tree.h" />
     <ClInclude Include="util\file.h" />
     <ClInclude Include="util\string.h" />
     <ClInclude Include="util\vector.h" />

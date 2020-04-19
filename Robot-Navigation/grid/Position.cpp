@@ -1,5 +1,5 @@
 #include "Position.h"
-#include "NoPathFoundException.h"
+#include "../exceptions/NoPathFoundException.h"
 
 Position::Position(int X, int Y) : x(X), y(Y){}
 

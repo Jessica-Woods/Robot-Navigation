@@ -1,10 +1,12 @@
 #include "StackFrontier.h"
 
-void StackFrontier::pushNode(Node* node) {
-  frontier.push(node);
+void StackFrontier::push(Node* node) {
+  if (node != nullptr) {
+    frontier.push(node);
+  }
 }
 
-Node* StackFrontier::popNode() {
+Node* StackFrontier::pop() {
   Node* node = frontier.top();
   frontier.pop();
   return node;

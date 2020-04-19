@@ -1,7 +1,7 @@
 #include "gtest/gtest.h"
 
-#include "../Robot-Navigation/DFS.h"
-#include "../Robot-Navigation/NoPathFoundException.h"
+#include "../Robot-Navigation/search_algorithms/DFS.h"
+#include "../Robot-Navigation/exceptions/NoPathFoundException.h"
 
 #include <algorithm>
 TEST(DFS, node_count_test) {

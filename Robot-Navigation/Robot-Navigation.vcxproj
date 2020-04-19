@@ -22,7 +22,7 @@
     <ClCompile Include="search_algorithms\BFS.cpp" />
     <ClCompile Include="search_algorithms\DFS.cpp" />
     <ClCompile Include="grid\Direction.cpp" />
-    <ClCompile Include="tree\Frontier.cpp" />
+    <ClCompile Include="search_algorithms\GBFS.cpp" />
     <ClCompile Include="grid\Grid.cpp" />
     <ClCompile Include="exceptions\InvalidGridException.cpp" />
     <ClCompile Include="tree\Node.cpp" />
@@ -31,7 +31,9 @@
     <ClCompile Include="grid\Rectangle.cpp" />
     <ClCompile Include="RobotNavigation.cpp" />
     <ClCompile Include="grid\Size.cpp" />
+    <ClCompile Include="tree\PriorityQueueFrontier.cpp" />
     <ClCompile Include="tree\QueueFrontier.cpp" />
+    <ClCompile Include="tree\Visited.cpp" />
     <ClCompile Include="tree\StackFrontier.cpp" />
     <ClCompile Include="tree\Tree.cpp" />
     <ClCompile Include="util\file.cpp" />
@@ -42,7 +44,7 @@
     <ClInclude Include="search_algorithms\BFS.h" />
     <ClInclude Include="search_algorithms\DFS.h" />
     <ClInclude Include="grid\Direction.h" />
-    <ClInclude Include="tree\Frontier.h" />
+    <ClInclude Include="search_algorithms\GBFS.h" />
     <ClInclude Include="grid\Grid.h" />
     <ClInclude Include="exceptions\InvalidGridException.h" />
     <ClInclude Include="tree\Node.h" />
@@ -51,7 +53,9 @@
     <ClInclude Include="grid\Rectangle.h" />
     <ClInclude Include="RobotNavigation.h" />
     <ClInclude Include="grid\Size.h" />
+    <ClInclude Include="tree\PriorityQueueFrontier.h" />
     <ClInclude Include="tree\QueueFrontier.h" />
+    <ClInclude Include="tree\Visited.h" />
     <ClInclude Include="tree\StackFrontier.h" />
     <ClInclude Include="tree\Tree.h" />
     <ClInclude Include="util\file.h" />

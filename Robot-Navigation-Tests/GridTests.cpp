@@ -1,7 +1,7 @@
 #include "gtest/gtest.h"
 
-#include "../Robot-Navigation/Grid.h"
-#include "../Robot-Navigation/InvalidGridException.h"
+#include "../Robot-Navigation/grid/Grid.h"
+#include "../Robot-Navigation/exceptions/InvalidGridException.h"
 
 TEST(Grid, parse_assignment_example_test) {
   std::vector<std::string> file = {

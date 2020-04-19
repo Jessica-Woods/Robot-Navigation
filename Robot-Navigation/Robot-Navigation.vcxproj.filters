@@ -66,9 +66,6 @@
     <ClCompile Include="tree\Tree.cpp">
       <Filter>Source Files\tree</Filter>
     </ClCompile>
-    <ClCompile Include="tree\Frontier.cpp">
-      <Filter>Source Files\tree</Filter>
-    </ClCompile>
     <ClCompile Include="tree\Node.cpp">
       <Filter>Source Files\tree</Filter>
     </ClCompile>
@@ -99,6 +96,15 @@
     <ClCompile Include="tree\StackFrontier.cpp">
       <Filter>Source Files\tree</Filter>
     </ClCompile>
+    <ClCompile Include="search_algorithms\GBFS.cpp">
+      <Filter>Source Files\search_algorithms</Filter>
+    </ClCompile>
+    <ClCompile Include="tree\Visited.cpp">
+      <Filter>Source Files\tree</Filter>
+    </ClCompile>
+    <ClCompile Include="tree\PriorityQueueFrontier.cpp">
+      <Filter>Source Files\tree</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="RobotNavigation.h">
@@ -118,9 +124,6 @@
     </ClInclude>
     <ClInclude Include="search_algorithms\DFS.h">
       <Filter>Header Files\search_agorithms</Filter>
-    </ClInclude>
-    <ClInclude Include="tree\Frontier.h">
-      <Filter>Header Files\tree</Filter>
     </ClInclude>
     <ClInclude Include="tree\Node.h">
       <Filter>Header Files\tree</Filter>
@@ -153,6 +156,15 @@
       <Filter>Header Files\tree</Filter>
     </ClInclude>
     <ClInclude Include="tree\StackFrontier.h">
+      <Filter>Header Files\tree</Filter>
+    </ClInclude>
+    <ClInclude Include="search_algorithms\GBFS.h">
+      <Filter>Header Files\search_agorithms</Filter>
+    </ClInclude>
+    <ClInclude Include="tree\Visited.h">
+      <Filter>Header Files\tree</Filter>
+    </ClInclude>
+    <ClInclude Include="tree\PriorityQueueFrontier.h">
       <Filter>Header Files\tree</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,10 +1,12 @@
 #include "QueueFrontier.h"
 
-void QueueFrontier::pushNode(Node* node) {
-  frontier.push(node);
+void QueueFrontier::push(Node* node) {
+  if (node != nullptr) {
+    frontier.push(node);
+  }
 }
 
-Node* QueueFrontier::popNode() {
+Node* QueueFrontier::pop() {
   Node* node = frontier.front();
   frontier.pop();
   return node;

@@ -15,6 +15,7 @@ private:
   std::vector<std::vector<Cell>> grid;
   Size size;
   Position agentPos;
+  std::vector<Position> goals;
 
   void validate();
 public:
@@ -31,6 +32,9 @@ public:
   Position getAgentPos();
   Node* getEmptyNode(Position pos);
   Node* getAgentNode();
+
+  int manhattanDistance(Position a, Position b);
+  int manhattanDistanceToClosestGoal(Position pos);
 
   std::string toString();
 

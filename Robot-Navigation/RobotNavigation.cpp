@@ -12,6 +12,7 @@
 #include "tree/Tree.h"
 #include "search_algorithms/DFS.h"
 #include "search_algorithms/BFS.h"
+#include "search_algorithms/GBFS.h"
 
 Tree RobotNavigation::runSearch(std::string method, std::vector<std::string>& lines) {
   Grid grid(Grid::fromLines(lines));
@@ -20,10 +21,9 @@ Tree RobotNavigation::runSearch(std::string method, std::vector<std::string>& li
   // Uninformed
   if (method == "DFS") { return DFS::search(grid); } 
   else if (method == "BFS") { return BFS::search(grid); }
-  //// Informed
-  //} else if (method == "GBFS") {
 
-  //  return tree;
+  // Informed
+  else if (method == "GBFS") { return GBFS::search(grid); }
   //} else if (method == "AS") {
 
   //  return tree;

@@ -5,14 +5,12 @@
 #include "Frontier.h"
 #include "Node.h"
 
-class StackFrontier : public Frontier {
+class StackFrontier {
 private:
   std::stack<Node*> frontier;
 
-protected:
-  void pushNode(Node* node) override;
-  Node* popNode() override;
-
 public:
-  bool empty() const override;
+  void push(Node* node);
+  Node* pop();
+  bool empty() const;
 };

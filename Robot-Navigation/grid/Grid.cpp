@@ -25,6 +25,7 @@ Grid::Grid(Size sz, Position ap) : size(sz), agentPos(ap){
 Grid& Grid::addGoal(Position goal) {
   grid[goal.y][goal.x] = Cell::GOAL;
   validate();
+  goals.push_back(goal);
   return *this;
 }
 
@@ -50,13 +51,32 @@ Position Grid::getAgentPos() { return agentPos; }
 
 Node* Grid::getEmptyNode(Position pos) {
   if (inBounds(pos.x, pos.y) && get(pos.x, pos.y) != Cell::WALL) {
-    return new Node(Position(pos.x, pos.y), isGoalAt(pos.x, pos.y));
+    return new Node(pos, isGoalAt(pos.x, pos.y));
   }
   return nullptr;
 }
 
 Node* Grid::getAgentNode() {
   return getEmptyNode(agentPos);
+}
+
+int Grid::manhattanDistance(Position a, Position b) {
+  int dx = std::abs(a.x - b.x);
+  int dy = std::abs(a.y - b.y);
+  return dx + dy;
+}
+
+int Grid::manhattanDistanceToClosestGoal(Position pos) {
+  int result = INT_MAX;
+
+  for (auto goal : goals) {
+    int distance = manhattanDistance(pos, goal);
+    if (distance < result) {
+      result = distance;
+    }
+  }
+
+  return result;
 }
 
 std::string Grid::toString() {

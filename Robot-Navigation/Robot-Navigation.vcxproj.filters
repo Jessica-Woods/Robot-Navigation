@@ -19,23 +19,29 @@
     <Filter Include="Source Files\util">
       <UniqueIdentifier>{ed0fd4a8-8356-4fa7-a0e0-a428df245e57}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Search Algorithms">
-      <UniqueIdentifier>{a0178346-a6ae-42f2-a17a-45c5ee14fd9a}</UniqueIdentifier>
+    <Filter Include="Header Files\grid">
+      <UniqueIdentifier>{b15cf2c4-821f-4651-bf14-83ebbe6fe84c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Search Algorithms">
-      <UniqueIdentifier>{9a6ec5f8-c041-4f72-b953-3c14cf561b9f}</UniqueIdentifier>
+    <Filter Include="Source Files\grid">
+      <UniqueIdentifier>{36afeebb-6e7e-454c-8bfa-09c4e695650f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Exceptions">
-      <UniqueIdentifier>{badc2b32-bf0c-4c4c-a453-f0c8bfa81e99}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Exceptions">
+    <Filter Include="Source Files\exceptions">
       <UniqueIdentifier>{c31a4316-c8a4-425a-adc6-1257cfcd7090}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Tree">
-      <UniqueIdentifier>{d342ad18-9f14-4e67-a519-1893f4843f68}</UniqueIdentifier>
+    <Filter Include="Header Files\exceptions">
+      <UniqueIdentifier>{badc2b32-bf0c-4c4c-a453-f0c8bfa81e99}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Tree">
+    <Filter Include="Header Files\search_agorithms">
+      <UniqueIdentifier>{a0178346-a6ae-42f2-a17a-45c5ee14fd9a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\search_algorithms">
+      <UniqueIdentifier>{9a6ec5f8-c041-4f72-b953-3c14cf561b9f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\tree">
       <UniqueIdentifier>{439786b0-07fe-4b47-9f3e-e9e5e3cbccb1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\tree">
+      <UniqueIdentifier>{d342ad18-9f14-4e67-a519-1893f4843f68}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -52,40 +58,40 @@
       <Filter>Source Files\util</Filter>
     </ClCompile>
     <ClCompile Include="DFS.cpp">
-      <Filter>Source Files\Search Algorithms</Filter>
+      <Filter>Source Files\search_algorithms</Filter>
     </ClCompile>
     <ClCompile Include="InvalidGridException.cpp">
-      <Filter>Source Files\Exceptions</Filter>
+      <Filter>Source Files\exceptions</Filter>
     </ClCompile>
     <ClCompile Include="NoPathFoundException.cpp">
-      <Filter>Source Files\Exceptions</Filter>
+      <Filter>Source Files\exceptions</Filter>
     </ClCompile>
     <ClCompile Include="Tree.cpp">
-      <Filter>Source Files\Tree</Filter>
-    </ClCompile>
-    <ClCompile Include="Position.cpp">
-      <Filter>Source Files\Tree</Filter>
+      <Filter>Source Files\tree</Filter>
     </ClCompile>
     <ClCompile Include="Node.cpp">
-      <Filter>Source Files\Tree</Filter>
-    </ClCompile>
-    <ClCompile Include="Grid.cpp">
-      <Filter>Source Files\Tree</Filter>
+      <Filter>Source Files\tree</Filter>
     </ClCompile>
     <ClCompile Include="Frontier.cpp">
-      <Filter>Source Files\Tree</Filter>
-    </ClCompile>
-    <ClCompile Include="Direction.cpp">
-      <Filter>Source Files\Tree</Filter>
-    </ClCompile>
-    <ClCompile Include="Size.cpp">
-      <Filter>Source Files\Tree</Filter>
-    </ClCompile>
-    <ClCompile Include="Rectangle.cpp">
-      <Filter>Source Files\Tree</Filter>
+      <Filter>Source Files\tree</Filter>
     </ClCompile>
     <ClCompile Include="BFS.cpp">
-      <Filter>Source Files\Search Algorithms</Filter>
+      <Filter>Source Files\search_algorithms</Filter>
+    </ClCompile>
+    <ClCompile Include="Direction.cpp">
+      <Filter>Source Files\grid</Filter>
+    </ClCompile>
+    <ClCompile Include="Grid.cpp">
+      <Filter>Source Files\grid</Filter>
+    </ClCompile>
+    <ClCompile Include="Rectangle.cpp">
+      <Filter>Source Files\grid</Filter>
+    </ClCompile>
+    <ClCompile Include="Position.cpp">
+      <Filter>Source Files\grid</Filter>
+    </ClCompile>
+    <ClCompile Include="Size.cpp">
+      <Filter>Source Files\grid</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -102,40 +108,40 @@
       <Filter>Header Files\util</Filter>
     </ClInclude>
     <ClInclude Include="DFS.h">
-      <Filter>Header Files\Search Algorithms</Filter>
+      <Filter>Header Files\search_agorithms</Filter>
     </ClInclude>
     <ClInclude Include="NoPathFoundException.h">
-      <Filter>Header Files\Exceptions</Filter>
+      <Filter>Header Files\exceptions</Filter>
     </ClInclude>
     <ClInclude Include="InvalidGridException.h">
-      <Filter>Header Files\Exceptions</Filter>
-    </ClInclude>
-    <ClInclude Include="Direction.h">
-      <Filter>Header Files\Tree</Filter>
+      <Filter>Header Files\exceptions</Filter>
     </ClInclude>
     <ClInclude Include="Frontier.h">
-      <Filter>Header Files\Tree</Filter>
-    </ClInclude>
-    <ClInclude Include="Grid.h">
-      <Filter>Header Files\Tree</Filter>
+      <Filter>Header Files\tree</Filter>
     </ClInclude>
     <ClInclude Include="Node.h">
-      <Filter>Header Files\Tree</Filter>
-    </ClInclude>
-    <ClInclude Include="Position.h">
-      <Filter>Header Files\Tree</Filter>
+      <Filter>Header Files\tree</Filter>
     </ClInclude>
     <ClInclude Include="Tree.h">
-      <Filter>Header Files\Tree</Filter>
-    </ClInclude>
-    <ClInclude Include="Size.h">
-      <Filter>Header Files\Tree</Filter>
-    </ClInclude>
-    <ClInclude Include="Rectangle.h">
-      <Filter>Header Files\Tree</Filter>
+      <Filter>Header Files\tree</Filter>
     </ClInclude>
     <ClInclude Include="BFS.h">
-      <Filter>Header Files\Search Algorithms</Filter>
+      <Filter>Header Files\search_agorithms</Filter>
+    </ClInclude>
+    <ClInclude Include="Direction.h">
+      <Filter>Header Files\grid</Filter>
+    </ClInclude>
+    <ClInclude Include="Grid.h">
+      <Filter>Header Files\grid</Filter>
+    </ClInclude>
+    <ClInclude Include="Position.h">
+      <Filter>Header Files\grid</Filter>
+    </ClInclude>
+    <ClInclude Include="Rectangle.h">
+      <Filter>Header Files\grid</Filter>
+    </ClInclude>
+    <ClInclude Include="Size.h">
+      <Filter>Header Files\grid</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

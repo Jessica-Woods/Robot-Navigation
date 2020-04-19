@@ -93,6 +93,12 @@
     <ClCompile Include="grid\Size.cpp">
       <Filter>Source Files\grid</Filter>
     </ClCompile>
+    <ClCompile Include="tree\QueueFrontier.cpp">
+      <Filter>Source Files\tree</Filter>
+    </ClCompile>
+    <ClCompile Include="tree\StackFrontier.cpp">
+      <Filter>Source Files\tree</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="RobotNavigation.h">
@@ -142,6 +148,12 @@
     </ClInclude>
     <ClInclude Include="grid\Direction.h">
       <Filter>Header Files\grid</Filter>
+    </ClInclude>
+    <ClInclude Include="tree\QueueFrontier.h">
+      <Filter>Header Files\tree</Filter>
+    </ClInclude>
+    <ClInclude Include="tree\StackFrontier.h">
+      <Filter>Header Files\tree</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

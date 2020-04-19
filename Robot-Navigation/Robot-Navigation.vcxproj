@@ -31,6 +31,8 @@
     <ClCompile Include="grid\Rectangle.cpp" />
     <ClCompile Include="RobotNavigation.cpp" />
     <ClCompile Include="grid\Size.cpp" />
+    <ClCompile Include="tree\QueueFrontier.cpp" />
+    <ClCompile Include="tree\StackFrontier.cpp" />
     <ClCompile Include="tree\Tree.cpp" />
     <ClCompile Include="util\file.cpp" />
     <ClCompile Include="util\string.cpp" />
@@ -49,6 +51,8 @@
     <ClInclude Include="grid\Rectangle.h" />
     <ClInclude Include="RobotNavigation.h" />
     <ClInclude Include="grid\Size.h" />
+    <ClInclude Include="tree\QueueFrontier.h" />
+    <ClInclude Include="tree\StackFrontier.h" />
     <ClInclude Include="tree\Tree.h" />
     <ClInclude Include="util\file.h" />
     <ClInclude Include="util\string.h" />

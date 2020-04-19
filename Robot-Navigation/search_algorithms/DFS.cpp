@@ -1,16 +1,16 @@
 #include "DFS.h"
 
-#include <deque>
-
-#include "../tree/Frontier.h"
+#include "../tree/StackFrontier.h"
 #include "../exceptions/NoPathFoundException.h"
 
 Tree DFS::search(Grid& grid) {
+  StackFrontier frontier;
+
   auto root = grid.getAgentNode();
-  Frontier frontier(root);
+  frontier.push(root);
 
   while (!frontier.empty()) {
-    auto node = frontier.popLastIn();
+    auto node = frontier.pop();
 
     if (node->getIsGoal()) {
       return Tree(root, node);

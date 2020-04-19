@@ -1,7 +1,5 @@
 #include "Tree.h"
 
-#include <stack>
-
 Tree::Tree(Node* root, Node* goal) {
   this->root = std::unique_ptr<Node>(root);
   this->goal = goal;

@@ -1,11 +1,15 @@
-#include "IDDFS.h"
+#include "IDAStar.h"
 
 #include "../tree/StackFrontier.h"
 #include "../tree/Visited.h"
 #include "../exceptions/NoPathFoundException.h"
 
-Tree IDDFS::search(Grid& grid) {
-  for (int maxDepth = 0; maxDepth < grid.totalCells(); ++maxDepth) {
+Tree IDAStar::search(Grid& grid) {
+
+  auto root = grid.getAgentNode();
+  auto maxDepth = grid.manhattanDistanceToClosestGoal(root->getPosition());
+
+  for (; maxDepth < grid.totalCells(); ++maxDepth) {
     StackFrontier frontier;
 
     auto root = grid.getAgentNode();
@@ -18,7 +22,7 @@ Tree IDDFS::search(Grid& grid) {
         return Tree(root, node);
       }
 
-      if (node->getDepth() < maxDepth) {
+      if (grid.manhattanDistanceToClosestGoal(node->getPosition()) + node->getDepth() < maxDepth) {
         Node* up = grid.getEmptyNode(node->getPosition().shift(Direction::UP));
         if (up != nullptr && node->isAncestor(*up)) { up = nullptr; }
 

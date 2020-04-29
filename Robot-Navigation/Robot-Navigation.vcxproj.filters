@@ -57,9 +57,6 @@
     <ClCompile Include="util\vector.cpp">
       <Filter>Source Files\util</Filter>
     </ClCompile>
-    <ClCompile Include="search_algorithms\BFS.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="search_algorithms\DFS.cpp">
       <Filter>Source Files\search_algorithms</Filter>
     </ClCompile>
@@ -106,6 +103,12 @@
       <Filter>Source Files\tree</Filter>
     </ClCompile>
     <ClCompile Include="search_algorithms\AStar.cpp">
+      <Filter>Source Files\search_algorithms</Filter>
+    </ClCompile>
+    <ClCompile Include="search_algorithms\BFS.cpp">
+      <Filter>Source Files\search_algorithms</Filter>
+    </ClCompile>
+    <ClCompile Include="search_algorithms\IDDFS.cpp">
       <Filter>Source Files\search_algorithms</Filter>
     </ClCompile>
   </ItemGroup>
@@ -171,6 +174,9 @@
       <Filter>Header Files\tree</Filter>
     </ClInclude>
     <ClInclude Include="search_algorithms\AStar.h">
+      <Filter>Header Files\search_agorithms</Filter>
+    </ClInclude>
+    <ClInclude Include="search_algorithms\IDDFS.h">
       <Filter>Header Files\search_agorithms</Filter>
     </ClInclude>
   </ItemGroup>

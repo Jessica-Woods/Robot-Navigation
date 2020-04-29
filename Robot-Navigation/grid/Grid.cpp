@@ -44,6 +44,7 @@ bool Grid::inBounds(int x, int y) {
 }
 bool Grid::isGoalAt(int x, int y) { return inBounds(x, y) && get(x, y) == Cell::GOAL; }
 
+int Grid::totalCells() { return size.width * size.height; }
 
 Cell Grid::get(int x, int y) { return grid.at(y).at(x); }
 Size Grid::getSize() { return size; }

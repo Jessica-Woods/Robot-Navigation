@@ -26,6 +26,7 @@ public:
 
   bool inBounds(int x, int y);
   bool isGoalAt(int x, int y);
+  int totalCells();
 
   Cell get(int x, int y);
   Size getSize();

@@ -29,7 +29,7 @@ private:
   std::vector<Edge> children;
   Position pos;
   bool isGoal;
-  int distanceFromRoot = 0;
+  int depth = 0;
 
 public:
   Node(Position pos, bool isGoal);
@@ -41,7 +41,7 @@ public:
   Node* getParent() const;
   Direction getParentDirectionToMe() const;
   bool getIsGoal() const;
-  int getDistanceFromRoot() const;
+  int getDepth() const;
 
   int totalNodes();
   std::string toString(int level = 0);

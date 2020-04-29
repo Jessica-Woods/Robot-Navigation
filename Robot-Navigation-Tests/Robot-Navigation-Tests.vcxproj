@@ -36,7 +36,9 @@
     <ClCompile Include="AStarTests.cpp" />
     <ClCompile Include="DFSTests.cpp" />
     <ClCompile Include="GridTests.cpp" />
+    <ClCompile Include="IDDFSTests.cpp" />
     <ClCompile Include="RobotNavigationTests.cpp" />
+    <ClCompile Include="SearchComparisonTests.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Robot-Navigation\Robot-Navigation.vcxproj">

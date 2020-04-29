@@ -26,7 +26,7 @@ Tree AStar::search(Grid& grid) {
         node->addChild(direction, child);
 
         int priority = grid.manhattanDistanceToClosestGoal(child->getPosition());
-        frontier.push(child, priority + child->getDepth());
+        frontier.push(child, priority + child->getDistanceFromRoot());
       }
     }
   }

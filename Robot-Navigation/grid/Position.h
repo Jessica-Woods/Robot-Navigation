@@ -4,8 +4,8 @@
 #include "Direction.h"
 
 struct Position {
-  int x;
-  int y;
+  const int x;
+  const int y;
 
   Position(int x, int y);
   Position shift(Direction direction);

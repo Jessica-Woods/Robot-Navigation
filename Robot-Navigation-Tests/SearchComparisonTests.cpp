@@ -4,6 +4,7 @@
 #include "../Robot-Navigation/search_algorithms/DFS.h"
 #include "../Robot-Navigation/search_algorithms/BFS.h"
 #include "../Robot-Navigation/search_algorithms/IDAStar.h"
+#include "../Robot-Navigation/search_algorithms/AStar.h"
 
 #include "../Robot-Navigation/exceptions/NoPathFoundException.h"
 
@@ -50,7 +51,7 @@ TEST(Comparison, IDDFS_should_seearch_less_nodes_then_BFS_when_tunnel_vision_hel
   EXPECT_GT(bfsTotalNodes, iddfsTotalNodes);
 }
 
-TEST(Comparison, IDDFS_should_seearch_less_nodes_then_BFS_when_tunnel_vision_helps_2) {
+TEST(Comparison, AStar_should_seearch_less_nodes_then_IDDFS) {
   // [A][ ][ ][ ]
   // [ ][ ][ ][ ]
   // [ ][ ][ ][ ]
@@ -67,11 +68,11 @@ TEST(Comparison, IDDFS_should_seearch_less_nodes_then_BFS_when_tunnel_vision_hel
   Tree idasTree = IDAStar::search(grid);
   auto idasTotalNodes = idasTree.totalNodes();
 
-  EXPECT_LT(iddfsTotalNodes, idasTotalNodes);
+  EXPECT_GT(iddfsTotalNodes, idasTotalNodes);
 }
 
 
-TEST(Comparison, IDDFS_should_seearch_less_nodes_then_BFS_when_tunnel_vision_helps_3) {
+TEST(Comparison, IDAStar_is_better_than_AStar) {
   // [A][W][G][W]
   // [ ][ ][W][ ]
   // [ ][ ][ ][ ]
@@ -85,11 +86,11 @@ TEST(Comparison, IDDFS_should_seearch_less_nodes_then_BFS_when_tunnel_vision_hel
     .addWall(Rectangle(3, 0))
     .addWall(Rectangle(2, 1));
 
-  Tree iddfsTree = IDDFS::search(grid);
-  auto iddfsTotalNodes = iddfsTree.totalNodes();
+  Tree asTree = AStar::search(grid);
+  auto asTotalNodes = asTree.totalNodes();
 
   Tree idasTree = IDAStar::search(grid);
   auto idasTotalNodes = idasTree.totalNodes();
 
-  EXPECT_LT(iddfsTotalNodes, idasTotalNodes);
+  EXPECT_GT(asTotalNodes, idasTotalNodes);
 }

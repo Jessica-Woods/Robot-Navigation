@@ -26,8 +26,8 @@ Tree AStar::search(Grid& grid) {
       if(child != nullptr) {
         node->addChild(direction, child);
 
-        int priority = grid.manhattanDistanceToClosestGoal(child->getPosition());
-        frontier.push(child, priority + child->getDepth());
+        int priority = grid.manhattanDistanceToClosestGoal(child->getPosition()) + child->getDepth();
+        frontier.push(child, priority);
         visited.add(child);
       }
     }

@@ -24,10 +24,12 @@ Tree IDAStar::search(Grid& grid) {
       }
 
       if (grid.manhattanDistanceToClosestGoal(node->getPosition()) + node->getDepth() < maxDepth) {
-        Node* up = visited.nullIfVisitedFromShorterPath(grid.getEmptyNode(node->getPosition().shift(Direction::UP)));
-        Node* left = visited.nullIfVisitedFromShorterPath(grid.getEmptyNode(node->getPosition().shift(Direction::LEFT)));
-        Node* down = visited.nullIfVisitedFromShorterPath(grid.getEmptyNode(node->getPosition().shift(Direction::DOWN)));
-        Node* right = visited.nullIfVisitedFromShorterPath(grid.getEmptyNode(node->getPosition().shift(Direction::RIGHT)));
+        int childPathCost = node->getDepth() + 1;
+
+        Node* up = visited.nullIfVisitedFromShorterPath(grid.getEmptyNode(node->getPosition().shift(Direction::UP)), childPathCost);
+        Node* left = visited.nullIfVisitedFromShorterPath(grid.getEmptyNode(node->getPosition().shift(Direction::LEFT)), childPathCost);
+        Node* down = visited.nullIfVisitedFromShorterPath(grid.getEmptyNode(node->getPosition().shift(Direction::DOWN)), childPathCost);
+        Node* right = visited.nullIfVisitedFromShorterPath(grid.getEmptyNode(node->getPosition().shift(Direction::RIGHT)), childPathCost);
 
         // We want UP -> LEFT -> DOWN -> RIGHT but we insert in reverse to the frontier because we're using a stack
         frontier.push(right);
@@ -35,10 +37,10 @@ Tree IDAStar::search(Grid& grid) {
         frontier.push(left);
         frontier.push(up);
 
-        visited.add(up);
-        visited.add(left);
-        visited.add(down);
-        visited.add(right);
+        visited.add(up, childPathCost);
+        visited.add(left, childPathCost);
+        visited.add(down, childPathCost);
+        visited.add(right, childPathCost);
 
         node->addChild(Direction::UP, up);
         node->addChild(Direction::LEFT, left);

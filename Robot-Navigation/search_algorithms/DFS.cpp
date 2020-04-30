@@ -18,10 +18,10 @@ Tree DFS::search(Grid& grid) {
       return Tree(root, node);
     }
 
-    Node* up = visited.nullIfContains(grid.getEmptyNode(node->getPosition().shift(Direction::UP)));
-    Node* left = visited.nullIfContains(grid.getEmptyNode(node->getPosition().shift(Direction::LEFT)));
-    Node* down = visited.nullIfContains(grid.getEmptyNode(node->getPosition().shift(Direction::DOWN)));
-    Node* right = visited.nullIfContains(grid.getEmptyNode(node->getPosition().shift(Direction::RIGHT)));
+    Node* up = visited.nullIfVisitedFromShorterPath(grid.getEmptyNode(node->getPosition().shift(Direction::UP)));
+    Node* left = visited.nullIfVisitedFromShorterPath(grid.getEmptyNode(node->getPosition().shift(Direction::LEFT)));
+    Node* down = visited.nullIfVisitedFromShorterPath(grid.getEmptyNode(node->getPosition().shift(Direction::DOWN)));
+    Node* right = visited.nullIfVisitedFromShorterPath(grid.getEmptyNode(node->getPosition().shift(Direction::RIGHT)));
 
     // We want UP -> LEFT -> DOWN -> RIGHT but we insert in reverse to the frontier because our 
     // DFS is implemented with a stack.

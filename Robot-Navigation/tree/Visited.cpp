@@ -1,19 +1,34 @@
 #include "Visited.h"
 
-Node* Visited::add(Node* node) {
+#include <algorithm>
+
+Node* Visited::add(Node* node, int cost) {
   if (node != nullptr) {
-    visited.insert(node->getPosition());
+    auto pos = node->getPosition();
+    auto visit = visited.find(pos);
+    if (visit != visited.end()) {
+      int currentPathCost = visit->second;
+      visited[node->getPosition()] = std::min(cost, currentPathCost);
+    } else {
+      visited[node->getPosition()] = cost;
+    }
   }
   return node;
 }
 
-bool Visited::contains(Node* node) {
+bool Visited::containsShorterPath(Node* node, int cost) {
+  auto visit = visited.find(node->getPosition());
+  if (visit != visited.end()) {
+    return visit->second <= cost;
+  } 
+  return false;
+
   return visited.find(node->getPosition()) != visited.end();
 }
 
-Node* Visited::nullIfContains(Node* node) {
+Node* Visited::nullIfVisitedFromShorterPath(Node* node, int cost) {
   if (node != nullptr) {
-    if (!contains(node)) {
+    if (!containsShorterPath(node, cost)) {
       return node;
     } else {
       delete node;

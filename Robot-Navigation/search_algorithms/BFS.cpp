@@ -19,25 +19,13 @@ Tree BFS::search(Grid& grid) {
       return Tree(root, node);
     }
 
-    Node* up = visited.nullIfContains(grid.getEmptyNode(node->getPosition().shift(Direction::UP)));
-    Node* left = visited.nullIfContains(grid.getEmptyNode(node->getPosition().shift(Direction::LEFT)));
-    Node* down = visited.nullIfContains(grid.getEmptyNode(node->getPosition().shift(Direction::DOWN)));
-    Node* right = visited.nullIfContains(grid.getEmptyNode(node->getPosition().shift(Direction::RIGHT)));
-
-    frontier.push(up);
-    frontier.push(left);
-    frontier.push(down);
-    frontier.push(right);
-
-    visited.add(up);
-    visited.add(left);
-    visited.add(down);
-    visited.add(right);
-
-    node->addChild(Direction::UP, up);
-    node->addChild(Direction::LEFT, left);
-    node->addChild(Direction::DOWN, down);
-    node->addChild(Direction::RIGHT, right);
+    auto directions = { Direction::UP, Direction::LEFT, Direction::DOWN, Direction::RIGHT };
+    for (auto direction : directions) {
+      Node* child = visited.nullIfVisitedFromShorterPath(grid.getEmptyNode(node->getPosition().shift(direction)));
+      frontier.push(child);
+      visited.add(child);
+      node->addChild(direction, child);
+    }
   }
 
   throw NoPathFoundException();

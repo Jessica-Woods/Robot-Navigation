@@ -21,7 +21,7 @@ Tree GBFS::search(Grid& grid) {
     std::vector<Direction> directions = { Direction::UP, Direction::LEFT, Direction::DOWN, Direction::RIGHT };
     for(auto direction : directions) {
       auto childPosition = node->getPosition().shift(direction);
-      Node* child = visited.nullIfContains(grid.getEmptyNode(childPosition));
+      Node* child = visited.nullIfVisitedFromShorterPath(grid.getEmptyNode(childPosition));
       if(child != nullptr) {
         node->addChild(direction, child);
 

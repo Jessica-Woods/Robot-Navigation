@@ -24,13 +24,12 @@ Tree IDAStar::search(Grid& grid) {
       }
 
       if (grid.manhattanDistanceToClosestGoal(node->getPosition()) + node->getDepth() < maxDepth) {
-        Node* up = visited.nullIfContains(grid.getEmptyNode(node->getPosition().shift(Direction::UP)));
-        Node* left = visited.nullIfContains(grid.getEmptyNode(node->getPosition().shift(Direction::LEFT)));
-        Node* down = visited.nullIfContains(grid.getEmptyNode(node->getPosition().shift(Direction::DOWN)));
-        Node* right = visited.nullIfContains(grid.getEmptyNode(node->getPosition().shift(Direction::RIGHT)));
+        Node* up = visited.nullIfVisitedFromShorterPath(grid.getEmptyNode(node->getPosition().shift(Direction::UP)));
+        Node* left = visited.nullIfVisitedFromShorterPath(grid.getEmptyNode(node->getPosition().shift(Direction::LEFT)));
+        Node* down = visited.nullIfVisitedFromShorterPath(grid.getEmptyNode(node->getPosition().shift(Direction::DOWN)));
+        Node* right = visited.nullIfVisitedFromShorterPath(grid.getEmptyNode(node->getPosition().shift(Direction::RIGHT)));
 
-        // We want UP -> LEFT -> DOWN -> RIGHT but we insert in reverse to the frontier because our 
-        // DFS is implemented with a stack.
+        // We want UP -> LEFT -> DOWN -> RIGHT but we insert in reverse to the frontier because we're using a stack
         frontier.push(right);
         frontier.push(down);
         frontier.push(left);
@@ -41,8 +40,6 @@ Tree IDAStar::search(Grid& grid) {
         visited.add(down);
         visited.add(right);
 
-        // We add the child nodes in the normal order so the order of children
-        // matches the order of evaluation.
         node->addChild(Direction::UP, up);
         node->addChild(Direction::LEFT, left);
         node->addChild(Direction::DOWN, down);

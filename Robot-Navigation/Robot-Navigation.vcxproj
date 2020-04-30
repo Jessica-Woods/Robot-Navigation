@@ -53,6 +53,7 @@
     <ClInclude Include="exceptions\InvalidGridException.h" />
     <ClInclude Include="search_algorithms\IDAStar.h" />
     <ClInclude Include="search_algorithms\IDDFS.h" />
+    <ClInclude Include="tree\Frontier.h" />
     <ClInclude Include="tree\Node.h" />
     <ClInclude Include="exceptions\NoPathFoundException.h" />
     <ClInclude Include="grid\Position.h" />

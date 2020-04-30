@@ -9,7 +9,6 @@
 #include "../Robot-Navigation/exceptions/NoPathFoundException.h"
 
 #include <algorithm>
-
 TEST(Comparison, IDDFS_finds_closer_goal_when_DFS_tunnel_visions) {
   // [G][ ][ ][ ]
   // [ ][ ][ ][ ]
@@ -30,7 +29,6 @@ TEST(Comparison, IDDFS_finds_closer_goal_when_DFS_tunnel_visions) {
   
   EXPECT_GT(dfsPath.size(), iddfsPath.size());
 }
-
 TEST(Comparison, IDDFS_should_seearch_less_nodes_then_BFS_when_tunnel_vision_helps) {
   // [G][ ][ ][ ]
   // [ ][ ][ ][ ]
@@ -50,7 +48,6 @@ TEST(Comparison, IDDFS_should_seearch_less_nodes_then_BFS_when_tunnel_vision_hel
 
   EXPECT_GT(bfsTotalNodes, iddfsTotalNodes);
 }
-
 TEST(Comparison, AStar_should_seearch_less_nodes_then_IDDFS) {
   // [A][ ][ ][ ]
   // [ ][ ][ ][ ]
@@ -70,7 +67,6 @@ TEST(Comparison, AStar_should_seearch_less_nodes_then_IDDFS) {
 
   EXPECT_GT(iddfsTotalNodes, idasTotalNodes);
 }
-
 
 TEST(Comparison, IDAStar_is_better_than_AStar) {
   // [A][W][G][W]

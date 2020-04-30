@@ -10,9 +10,10 @@ Tree AStar::search(Grid& grid) {
 
   auto root = grid.getAgentNode();
   frontier.push(root, grid.manhattanDistanceToClosestGoal(root->getPosition()));
+  visited.add(root);
 
   while (!frontier.empty()) {
-    auto node = visited.add(frontier.pop());
+    auto node = frontier.pop();
 
     if (node->getIsGoal()) {
       return Tree(root, node);
@@ -27,6 +28,7 @@ Tree AStar::search(Grid& grid) {
 
         int priority = grid.manhattanDistanceToClosestGoal(child->getPosition());
         frontier.push(child, priority + child->getDepth());
+        visited.add(child);
       }
     }
   }

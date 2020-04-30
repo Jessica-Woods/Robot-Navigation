@@ -1,8 +1,40 @@
 #include "Node.h"
+#include "QueueFrontier.h"
 #include <sstream>
 
 Node::Node(Position p, bool isGoal) : pos(p) {
   this->isGoal = isGoal;
+}
+
+Node::~Node() {
+  // We use an explicit destructor to iteratively delete the tree. This means
+  // the program won't run out of stack space on large trees
+  std::vector<Edge> allChildren;
+  std::queue<Edge> frontier;
+
+  for (auto& child : children) {
+    frontier.push(std::move(child));
+  }
+  children.clear();
+
+  while (!frontier.empty()) {
+    // Steal all our children into the frontier
+    auto edge = std::move(frontier.front());
+    frontier.pop();
+
+    for (auto& child : edge.node->children) {
+      frontier.push(std::move(child));
+    }
+
+    edge.node->children.clear();
+
+    allChildren.push_back(std::move(edge));
+  }
+
+  for (auto& child : allChildren) {
+    auto rawNode = child.node.release();
+    delete rawNode;
+  }
 }
 
 bool Node::isAncestor(Node& node) {

@@ -10,16 +10,15 @@ Tree BFS::search(Grid& grid) {
 
   auto root = grid.getAgentNode();
   frontier.push(root);
+  visited.add(root);
 
   while (!frontier.empty()) {
-    auto node = visited.add(frontier.pop());
+    auto node = frontier.pop();
 
     if (node->getIsGoal()) {
       return Tree(root, node);
     }
 
-    // We want UP -> LEFT -> DOWN -> RIGHT but we insert in reverse because our 
-    // BFS is implemented with a queue.
     Node* up = visited.nullIfContains(grid.getEmptyNode(node->getPosition().shift(Direction::UP)));
     Node* left = visited.nullIfContains(grid.getEmptyNode(node->getPosition().shift(Direction::LEFT)));
     Node* down = visited.nullIfContains(grid.getEmptyNode(node->getPosition().shift(Direction::DOWN)));
@@ -30,8 +29,11 @@ Tree BFS::search(Grid& grid) {
     frontier.push(down);
     frontier.push(right);
 
-    // We add the child nodes in the normal order so the order of children
-    // matches the order of evaluation.
+    visited.add(up);
+    visited.add(left);
+    visited.add(down);
+    visited.add(right);
+
     node->addChild(Direction::UP, up);
     node->addChild(Direction::LEFT, left);
     node->addChild(Direction::DOWN, down);

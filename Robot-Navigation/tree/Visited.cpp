@@ -1,7 +1,9 @@
 #include "Visited.h"
 
 Node* Visited::add(Node* node) {
-  visited.insert(node->getPosition());
+  if (node != nullptr) {
+    visited.insert(node->getPosition());
+  }
   return node;
 }
 
@@ -10,8 +12,13 @@ bool Visited::contains(Node* node) {
 }
 
 Node* Visited::nullIfContains(Node* node) {
-  if (node != nullptr && !contains(node)) {
-    return node;
+  if (node != nullptr) {
+    if (!contains(node)) {
+      return node;
+    } else {
+      delete node;
+      return nullptr;
+    }
   } else {
     return nullptr;
   }

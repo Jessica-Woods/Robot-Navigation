@@ -185,5 +185,8 @@
     <ClInclude Include="search_algorithms\IDAStar.h">
       <Filter>Header Files\search_agorithms</Filter>
     </ClInclude>
+    <ClInclude Include="tree\Frontier.h">
+      <Filter>Header Files\tree</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -33,6 +33,7 @@ private:
 
 public:
   Node(Position pos, bool isGoal);
+  ~Node();
 
   bool isAncestor(Node& node);
   void addChild(Direction direction, Node* child);

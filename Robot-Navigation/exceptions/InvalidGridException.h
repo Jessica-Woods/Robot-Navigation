@@ -1,6 +1,6 @@
 #pragma once
-#include <exception>
+#include <stdexcept>
 
-struct InvalidGridException : public std::exception {
-  const char* what() const noexcept;
+struct InvalidGridException : public std::runtime_error {
+  InvalidGridException();
 };

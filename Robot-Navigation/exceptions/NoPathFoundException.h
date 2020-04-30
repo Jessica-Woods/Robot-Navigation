@@ -1,6 +1,6 @@
 #pragma once
-#include <exception>
+#include <stdexcept>
 
-struct NoPathFoundException : public std::exception {
-  const char* what() const noexcept;
+struct NoPathFoundException : public std::runtime_error {
+  NoPathFoundException();
 };

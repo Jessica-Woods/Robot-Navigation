@@ -16,10 +16,10 @@
 #include "search_algorithms/AStar.h"
 #include "search_algorithms/IDDFS.h"
 #include "search_algorithms/IDAStar.h"
+#include "exceptions/InvalidSearchMethodException.h"
 
 Tree RobotNavigation::runSearch(std::string method, std::vector<std::string>& lines) {
   Grid grid(Grid::fromLines(lines));
-  //Tree tree(grid);
 
   // Uninformed methods
   if (method == "DFS") { return DFS::search(grid); } 
@@ -35,7 +35,8 @@ Tree RobotNavigation::runSearch(std::string method, std::vector<std::string>& li
   // Custom 2 - Iterative Deepening A* Search - informed method
   else if (method == "CUS2") { return IDAStar::search(grid); }
 
-  else { throw std::runtime_error("Unknown Method: " + method); }
+  else { throw InvalidSearchMethodException(method); }
+
 }
 
 std::string RobotNavigation::runFromFile(std::string filepath, std::string method) {

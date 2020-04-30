@@ -1,3 +1,4 @@
 #include "InvalidGridException.h"
 
-const char* InvalidGridException::what() const noexcept { return "Error: Invalid grid"; }
+InvalidGridException::InvalidGridException() : std::runtime_error("Error: Invalid grid") {}
+

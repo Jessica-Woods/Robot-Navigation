@@ -8,14 +8,13 @@ int main(int argc, char** argv) {
     return 1;
   }
 
-  //try {
+  try {
     RobotNavigation program;
     std::string filepath(argv[1]);
     std::string method(argv[2]);
 
     std::cout << program.runFromFile(filepath, method) << std::endl;
-  //} catch (std::exception e) {
-  //  std::cerr << e.what() << std::endl;
-  //}
-
+  } catch (std::exception e) {
+    std::cerr << e.what() << std::endl;
+  }
 }

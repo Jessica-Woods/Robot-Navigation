@@ -114,6 +114,9 @@
     <ClCompile Include="search_algorithms\IDAStar.cpp">
       <Filter>Source Files\search_algorithms</Filter>
     </ClCompile>
+    <ClCompile Include="exceptions\InvalidSearchMethodException.cpp">
+      <Filter>Source Files\exceptions</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="RobotNavigation.h">
@@ -187,6 +190,9 @@
     </ClInclude>
     <ClInclude Include="tree\Frontier.h">
       <Filter>Header Files\tree</Filter>
+    </ClInclude>
+    <ClInclude Include="exceptions\InvalidSearchMethodException.h">
+      <Filter>Header Files\exceptions</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

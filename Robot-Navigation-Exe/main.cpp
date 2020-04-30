@@ -15,6 +15,6 @@ int main(int argc, char** argv) {
 
     std::cout << program.runFromFile(filepath, method) << std::endl;
   } catch (std::exception e) {
-    std::cerr << e.what() << std::endl;
+    std::cout << e.what() << std::endl;
   }
 }
